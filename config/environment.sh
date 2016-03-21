@@ -1,7 +1,7 @@
-#!/bin/bash
+﻿#!/bin/bash
 
 # korvaa tämä omalla käyttäjätunnuksellasi
-USERNAME="kalleilv"
+USERNAME="heikkiah"
 # korvaa tämä haluamallasi kansion nimellä
-PROJECT_FOLDER="tsoha"
+PROJECT_FOLDER="webmonster"
 # sovelluksesi tulee sijaitsemaan osoitteessa USERNAME.users.cs.helsinki.fi/PROJECT_FOLDER
