@@ -2,7 +2,7 @@
 CREATE TABLE Gamemaster (
 id SERIAL PRIMARY KEY,
 name varhchar(50) NOT NULL,
-password varchar(50)
+password varchar(50) NOT NULL
 );
 
 CREATE TABLE Name (
