@@ -33,10 +33,10 @@ maxDamage int NOT NULL
 
 CREATE TABLE Creature (
 id SERIAL PRIMARY KEY,
-name varchar(50) REFERENCES Name(name) NOT NULL,
-creatureClass varchar(50) REFERENCES CreatureClass(name) NOT NULL,
-race varchar(50) REFERENCES Race(name) NOT NULL,
-weapon varchar(50) REFERENCES Weapon(name) NOT NULL,
+name varchar(50) NOT NULL,
+creatureClass varchar(50) NOT NULL,
+race varchar(50) NOT NULL,
+weapon varchar(50) NOT NULL,
 strength int NOT NULL,
 dexterity int NOT NULL,
 constitution int NOT NULL,
