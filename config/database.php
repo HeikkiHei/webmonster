@@ -14,7 +14,7 @@
       'mysql' => array(
         'resource' => 'mysql:unix_socket=/home/heikkiah/mysql/socket;dbname=mysql',
         'username' => 'heikkihei',
-        'password' => 'kissankorva'
+        'password' => 'tsohasalasana'
       )
     );
 

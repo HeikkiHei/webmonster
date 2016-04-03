@@ -1,4 +1,4 @@
-INSERT INTO Gamemaster (name, password) VALUES ('heikkihei', 'kissankorva');
+INSERT INTO Gamemaster (name, password) VALUES ('heikkihei', 'tsohasalasana');
 INSERT INTO Gamemaster (name, password) VALUES ('kayttaja', 'salasana');
 
 INSERT INTO Name (name, description) VALUES ('Pekka', 'Perinteinen suomalainen mies');
