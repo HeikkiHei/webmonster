@@ -1,5 +1,5 @@
-INSERT INTO Gamemaster (name, password) VALUES ('heikkihei', 'tsohasalasana');
-INSERT INTO Gamemaster (name, password) VALUES ('kayttaja', 'salasana');
+INSERT INTO Gamemaster (name, password, moderator) VALUES ('heikkihei', 'tsohasalasana', TRUE);
+INSERT INTO Gamemaster (name, password, moderator) VALUES ('kayttaja', 'salasana', FALSE);
 
 INSERT INTO Name (name, description) VALUES ('Pekka', 'Perinteinen suomalainen mies');
 INSERT INTO Name (name, description) VALUES ('Maija', 'Perinteinen suomalainen nainen');
