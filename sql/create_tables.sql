@@ -35,6 +35,7 @@ CREATE TABLE Creature (
 id SERIAL PRIMARY KEY,
 name varchar(50) NOT NULL,
 creatureClass varchar(50) NOT NULL,
+level int NOT NULL,
 race varchar(50) NOT NULL,
 weapon varchar(50) NOT NULL,
 strength int NOT NULL,
