@@ -8,5 +8,7 @@ class HelloWorldController extends BaseController{
   public static function sandbox(){
     View::make('helloworld.html');
   }
-
+  public static function creaturelist() {
+    View::make('creaturelist.html');
+  }
 }

@@ -8,3 +8,7 @@
     HelloWorldController::sandbox();
   });
 
+   $routes->get('/list', function() {
+    HelloWorldController::creaturelist();
+  });
+
