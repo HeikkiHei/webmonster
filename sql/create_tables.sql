@@ -1,7 +1,7 @@
 -- Lisää CREATE TABLE lauseet tähän tiedostoon
 CREATE TABLE Gamemaster (
 id SERIAL PRIMARY KEY,
-name varhchar(50) NOT NULL,
+name varchar(50) NOT NULL,
 password varchar(50) NOT NULL
 );
 
