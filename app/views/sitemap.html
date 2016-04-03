@@ -1,0 +1,31 @@
+			{% extends "base.html" %}
+
+			{% block title %}
+			Create a Game Master
+			{% endblock %}
+
+			{% block content %}
+
+			<h1>Page under construction, pages are static and no login required</h1>
+
+			<div class="form-group">	
+				<h3>Open pages</h3>
+				<a href="sitemap" class="btn btn-success">Sitemap</a>
+				<a href="{{base_path}}" class="btn btn-success">Login</a>
+			</div>
+			<div class="form-group">
+				<h3>Game Master login required</h3>
+				<a href="generatecreature" class="btn btn-success">Generate creature</a>
+				<a href="editcreature" class="btn btn-success">Edit creature</a>
+				<a href="showcreature" class="btn btn-success">Show Creature</a>
+				<a href="listcreature" class="btn btn-success">List Creatures</a>
+			</div>
+			<div class="form-group">
+				<h3>Moderator login required</h3>
+				<a href="generategm" class="btn btn-success">Generate GM</a>
+				<a href="editgm" class="btn btn-success">Edit GM</a>
+				<a href="showgm" class="btn btn-success">Show GM</a>
+				<a href="listgm" class="btn btn-success">List GM</a>
+			</div>
+
+			{% endblock %}

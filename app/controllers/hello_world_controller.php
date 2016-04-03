@@ -8,19 +8,41 @@ class HelloWorldController extends BaseController{
   public static function sandbox(){
     View::make('helloworld.html');
   }
-  public static function creaturelist() {
-    View::make('creaturelist.html');
+  public static function listcreature() {
+    View::make('listcreature.html');
   }
 
-  public static function editpage() {
-    View::make('editpage.html');
+  public static function editcreature() {
+    View::make('editcreature.html');
   }
 
-  public static function showpage() {
-    View::make('showpage.html');
+  public static function showcreature() {
+    View::make('showcreature.html');
   }
 
-  public static function generate() {
-    View::make('generate.html');
+  public static function generatecreature() {
+    View::make('generatecreature.html');
   }
+
+  public static function listgm() {
+    View::make('listgm.html');
+  }
+
+  public static function editgm() {
+    View::make('editgm.html');
+  }
+
+  public static function generategm() {
+    View::make('generategm.html');
+  }
+
+
+  public static function showgm() {
+    View::make('showgm.html');
+  }
+
+    public static function sitemap() {
+    View::make('sitemap.html');
+  }
+
 }
