@@ -5,7 +5,7 @@ Edit a monster
 {% endblock %}
 
 {% block content %}
-<h1>Edit: Maija/h1>
+<h1>Edit: Maija</h1>
 
   <form>
     <div class="checkbox">
@@ -34,16 +34,18 @@ Edit a monster
       <label>Weapon</label>
       <input type="text" class="form-control" value="Miekka">
     </div>
+    <div>
+      <label>Hit points (between -50 and 100):</label>
+      <br>
+      <input type="number" name="quantity" min="-50" max="100">
+    </div>
     <div class="form-group">
+    <br>
       <button type="submit" class="btn btn-primary">Save</button>
     </div>
   </form>
 
 
-<form action="action_page.php">
-  Hit points (between 0 and 20):
-  <input type="number" name="quantity" min="0" max="20">
-  <input type="Set hitpoints">
-</form>
+
 
   {% endblock %}

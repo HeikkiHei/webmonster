@@ -43,5 +43,6 @@ dexterity int NOT NULL,
 constitution int NOT NULL,
 intelligence int NOT NULL,
 wisdom int NOT NULL,
-charisma int NOT NULL
+charisma int NOT NULL,
+hitpoints int NOT NULL
 );

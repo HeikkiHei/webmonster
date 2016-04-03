@@ -12,3 +12,7 @@
     HelloWorldController::creaturelist();
   });
 
+      $routes->get('/edit', function() {
+    HelloWorldController::editpage();
+  });
+
