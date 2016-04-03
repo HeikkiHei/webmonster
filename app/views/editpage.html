@@ -7,45 +7,88 @@ Edit a monster
 {% block content %}
 <h1>Edit: Maija</h1>
 
-  <form>
-    <div class="checkbox">
-      <label>
-        <input type="checkbox">
-        Dead
-      </label>
-    </div>
-    <div class="form-group">
-      <label>Name</label>
-      <input type="text" class="form-control" value="Maija">
-    </div>
-    <div class="form-group">
-      <label>Race</label>
-      <input type="text" class="form-control" value="Jättiläinen">
-    </div>
-    <div class="form-group">
-      <label>Class</label>
-      <input type="text" class="form-control" value="Ritari">
-    </div>
-    <div class="form-group">
-      <label>Level</label>
-      <input type="text" class="form-control" value="1">
-    </div>
-    <div class="form-group">
-      <label>Weapon</label>
-      <input type="text" class="form-control" value="Miekka">
-    </div>
-    <div>
-      <label>Hit points (between -50 and 100):</label>
-      <br>
-      <input type="number" name="quantity" min="-50" max="100">
-    </div>
-    <div class="form-group">
+<form>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox">
+      Dead
+    </label>
+  </div>
+  <div class="form-group">
+    <label>Name</label>
+    <input type="text" class="form-control" value="Maija">
+  </div>
+  <div class="form-group">
+    <label>Race</label>
+    <input type="text" class="form-control" value="Jättiläinen">
+  </div>
+  <div class="form-group">
+    <label>Class</label>
+    <input type="text" class="form-control" value="Ritari">
+  </div>
+  <div class="form-group">
+    <label>Weapon</label>
+    <input type="text" class="form-control" value="Miekka">
+  </div>
+
+  <div>
+    <label style="white-space: pre">Level                 (between 1 and 100):</label>
     <br>
-      <button type="submit" class="btn btn-primary">Save</button>
-    </div>
-  </form>
+    <input type="number" name="quantity" min="1" max="100">
+  </div>
+
+  <div>
+    <br>
+    <label style="white-space: pre">Hit points          (between -50 and 100):</label>
+    <br>
+    <input type="number" name="quantity" min="-50" max="100">
+  </div>
+
+  <div>
+    <br>
+    <label style="white-space: pre">Strength            (between 0 and 100):</label>
+    <br>
+    <input type="number" name="quantity" min="0" max="100">
+  </div>
+  <div>
+    <br>
+    <label style="white-space: pre">Dexterity            (between 0 and 100):</label>
+    <br>
+    <input type="number" name="quantity" min="0" max="100">
+  </div>
+  <div>
+    <br>
+    <label style="white-space: pre">Constitution      (between 0 and 100):</label>
+    <br>
+    <input type="number" name="quantity" min="0" max="100">
+  </div>
+  <div>
+    <br>
+    <label style="white-space: pre">Intelligence       (between 0 and 100):</label>
+    <br>
+    <input type="number" name="quantity" min="0" max="100">
+  </div>
+  <div>
+    <br>
+    <label style="white-space: pre">Wisdom             (between 0 and 100):</label>
+    <br>
+    <input type="number" name="quantity" min="0" max="100">
+  </div>
+  <div>
+    <br>
+    <label style="white-space: pre">Charisma          (between 0 and 100):</label>
+    <br>
+    <input type="number" name="quantity" min="0" max="100">
+  </div>
+
+
+  <div class="form-group">
+    <br>
+    <button type="submit" class="btn btn-primary">Save</button>
+  </div>
+</form>
 
 
 
 
-  {% endblock %}
+{% endblock %}
