@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block title %}
+Examine a monster
+{% endblock %}
+
+{% block content %}
+<h1>Maija</h1>
+<!--Nappi-->
+<p><button class="btn btn-danger">Delete</button> <a href="edit" class="btn btn-default">Edit</a></p>
+<!-- Otsikot -->
+
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Race</th>
+      <th>Class</th>
+      <th>Level</th>
+      <th>Weapon</th>
+      <th></th>
+    </tr>
+
+  </thead>
+
+  <tbody>
+    <!-- Hahmon tiedot -->
+    <tr>
+      <td><a href="#">Maija</a></td>
+      <td>Jättiläinen</td>
+      <td>Ritari</td>
+      <td>1</td>
+      <td>Miekka</td>
+      <th></th>
+    </tr>
+
+  </tbody>
+
+  <thead>
+    <tr>
+      <th>Strength</th>
+      <th>Dexterity</th>
+      <th>Constitution</th>
+      <th>Intelligence</th>
+      <th>Wisdom</th>
+      <th>Charisma</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>10</td>
+      <td>10</td>
+      <td>10</td>
+      <td>10</td>
+      <td>10</td
+>      <td>10</td>
+    </tr>
+  </tbody>
+
+</table>
+
+{% endblock %}

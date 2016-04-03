@@ -33,6 +33,7 @@ maxDamage int NOT NULL
 
 CREATE TABLE Creature (
 id SERIAL PRIMARY KEY,
+owner int REFERENCES Gamemaster(id) NOT NULL,
 name varchar(50) NOT NULL,
 race varchar(50) NOT NULL,
 creatureClass varchar(50) NOT NULL,
