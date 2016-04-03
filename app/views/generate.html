@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}
+Generate a creature
+{% endblock %}
+
+{% block content %}
+<h1>Generate creature</h1>
+  <div>
+    <label style="white-space: pre">Level                 (between 1 and 100):</label>
+    <br>
+    <input type="number" name="quantity" min="1" max="100">
+  </div>
+
+  <div>
+    <br>
+    <label style="white-space: pre">Hit points          (between 0 and 100):</label>
+    <br>
+    <input type="number" name="quantity" min="0" max="100">
+  </div>
+
+  <br>
+
+  <div class="form-group">
+  <a href="show" class="btn btn-success">Generate</a>
+  </div>
+</form>
+
+
+
+
+{% endblock %}

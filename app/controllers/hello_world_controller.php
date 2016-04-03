@@ -19,4 +19,8 @@ class HelloWorldController extends BaseController{
   public static function showpage() {
     View::make('showpage.html');
   }
+
+  public static function generate() {
+    View::make('generate.html');
+  }
 }

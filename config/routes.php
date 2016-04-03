@@ -18,6 +18,9 @@ $routes->get('/edit', function() {
 
 $routes->get('/show', function() {
 	HelloWorldController::showpage();
+});
 
+$routes->get('/generate', function() {
+	HelloWorldController::generate();
 });
 
