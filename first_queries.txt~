@@ -17,14 +17,6 @@ SELECT creature.id AS id, name.name AS name, weapon.name AS weapon
         AND inventory.weapon_id = weapon.id
         AND creature.id=1;
 
-// weapons of a creature, search with creature id, return weapon names and descriptions:
-
-SELECT weapon.name, weapon.description 
-	FROM inventory, creature, weapon 
-	WHERE inventory.creature_id = creature.id 
-	AND inventory.weapon_id = weapon.id 
-	AND creature.id = 3;
-
 
 
 //COMPLETE CREATURE WITH ALL THE STATS, FULL INVENTORY, PRINTS ONE LINE FOR EACH WEAPON. At the moment returns only if there is weapons in inventory.
