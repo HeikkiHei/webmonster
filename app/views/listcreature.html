@@ -15,34 +15,27 @@ Personal creature list
     <thead>
       <tr>
         <th>Name</th>
+        <th>Owner</th>
         <th>Race</th>
         <th>Class</th>
         <th>Level</th>
-        <th>Weapon</th>
         <th></th>
       </tr>
     </thead>
 
     <tbody>
-      <!-- Listataan hahmot tähän -->
-      <tr>
-        <td><a href="#">Maija</a></td>
-        <td>Jättiläinen</td>
-        <td>Ritari</td>
-        <td>1</td>
-        <td>Miekka</td>
-        <th><a class="btn btn-default btn-sm" href="editcreature">Edit</a></th>
-      </tr>
+
+    {% for creature in creatures %}
 
       <tr>
-        <td><a href="#">Martti</a></td>
-        <td>Ihminen</td>
-        <td>Seppä</td>
-        <td>1</td>
-        <td>Vasara</td>
+        <td><a href="{{base_path}}/{{creature.id}}">{{creature.name}}</a></td>
+        <td>{{creature.owner}}</td>
+        <td>{{creature.race}}</td>
+        <td>{{creature.creatureClass}}</td>
+        <td>{{creature.level}}</td>
         <th><a class="btn btn-default btn-sm" href="editcreature">Edit</a></th>
       </tr>
-
+      {% endfor %}
     </tbody>
   </table>
 {% endblock %}

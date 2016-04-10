@@ -5,12 +5,6 @@ class HelloWorldController extends BaseController{
   public static function index(){
     View::make('login.html');
   }
-  public static function sandbox(){
-    View::make('helloworld.html');
-  }
-  public static function listcreature() {
-    View::make('listcreature.html');
-  }
 
   public static function editcreature() {
     View::make('editcreature.html');
@@ -44,5 +38,7 @@ class HelloWorldController extends BaseController{
     public static function sitemap() {
     View::make('sitemap.html');
   }
+
+
 
 }

@@ -1,15 +1,16 @@
 <?php
 
-$routes->get('/', function() {
-	HelloWorldController::index();
-});
-
-$routes->get('/hiekkalaatikko', function() {
-	HelloWorldController::sandbox();
+$routes->get('/debug', function() {
+	CreatureController::debug();
 });
 
 $routes->get('/listcreature', function() {
-	HelloWorldController::listcreature();
+	CreatureController::listcreature();
+});
+
+
+$routes->get('/', function() {
+	HelloWorldController::index();
 });
 
 $routes->get('/editcreature', function() {
