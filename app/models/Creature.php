@@ -94,6 +94,26 @@ class Creature extends BaseModel {
 		$this->id = $row['id'];
 	}
 
+	public function update() {
+		$query = DB::connection()->prepare('UPDATE Creature SET (owner, name, race, creatureClass, level, strength, dexterity, constitution, intelligence, wisdom, charisma, hitpoints) =
+			(:owner, :name, :race, :creatureClass, :level, :strength, :dexterity, :constitution, :intelligence, :wisdom, :charisma, :hitpoints) WHERE id = :id');
+		$query->execute(array('id' => $this->id,
+			'owner' => $this->owner,
+			'name' => $this->name,
+			'race' => $this->race,
+			'creatureClass' => $this->creatureClass,
+			'level' => $this->level,
+			'strength' => $this->strength,
+			'dexterity' => $this->dexterity,
+			'constitution' => $this->constitution,
+			'intelligence' => $this->intelligence,
+			'wisdom' => $this->wisdom,
+			'charisma' => $this->charisma,
+			'hitpoints' => $this->hitpoints
+			));
+	}
+
+
 	public static function getnames(){
 		$query = DB::connection()->prepare('SELECT * FROM name');
 		
