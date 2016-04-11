@@ -5,7 +5,7 @@ Examine a creature
 {% endblock %}
 
 {% block content %}
-
+{% for creature in creature %}
 <h1>{{creature.name}}</h1>
 <!--Nappi-->
 <p><a href="{{base_path}}/listcreature" class="btn btn-danger">Delete</a> <a href="{{base_path}}/editcreature" class="btn btn-success">Edit</a></p>
@@ -26,7 +26,7 @@ Examine a creature
   <p>Lapio</p>
   <p>Vasara</p>
 </div>
-
+{% endfor %}
 <div><div style="float: right;">
   <h3>Level</h3>
   <p>1</p>
