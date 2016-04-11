@@ -8,7 +8,7 @@ Personal creature list
   <h1>Your monsters</h1>
 
   <p>
-    <a href="generatecreature" class="btn btn-success">Generate monster</a>
+    <a href="{{base_path}}/generatecreature" class="btn btn-success">Generate monster</a>
   </p>
 
   <table class="table table-striped table-bordered">
@@ -28,12 +28,12 @@ Personal creature list
     {% for creature in creatures %}
 
       <tr>
-        <td><a href="{{base_path}}/{{creature.id}}">{{creature.name}}</a></td>
+        <td><a href="{{base_path}}/showcreature/{{creature.id}}">{{creature.name}}</a></td>
         <td>{{creature.owner}}</td>
         <td>{{creature.race}}</td>
         <td>{{creature.creatureClass}}</td>
         <td>{{creature.level}}</td>
-        <th><a class="btn btn-default btn-sm" href="editcreature">Edit</a></th>
+        <th><a class="btn btn-default btn-sm" href="{{base_path}}/editcreature">Edit</a></th>
       </tr>
       {% endfor %}
     </tbody>

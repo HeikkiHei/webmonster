@@ -5,20 +5,21 @@ Examine a creature
 {% endblock %}
 
 {% block content %}
-<h1>Maija</h1>
+
+<h1>{{creature.name}}</h1>
 <!--Nappi-->
-<p><a href="listcreature" class="btn btn-danger">Delete</a> <a href="editcreature" class="btn btn-success">Edit</a></p>
+<p><a href="{{base_path}}/listcreature" class="btn btn-danger">Delete</a> <a href="{{base_path}}/editcreature" class="btn btn-success">Edit</a></p>
 <!-- Otsikot -->
 
 <div><div style="float: left;">
   <h3>Name</h3>
-  <p>Maija</p>
+  <p><a href="{{base_path}}/{{creature.id}}">{{creature.name}}</a></p>
 
   <h3>Race</h3>
-  <p>Jättiläinen</p>
+  <p>{{creature.race}}</p>
 
   <h3>Class</h3>
-  <p>Ritari</p>
+  <p>{{creature.creatureClass}}</p>
 
   <h3>Inventory</h3>
   <p>Miekka</p>

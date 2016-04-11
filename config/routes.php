@@ -1,6 +1,20 @@
 <?php
 
-$routes->get('/debug', function() {
+
+// Site
+
+$routes->get('/', function() {
+	SiteController::index();
+});
+
+$routes->get('/sitemap', function() {
+	SiteController::sitemap();
+});
+
+
+//Creatures
+
+$routes->get('/debugcreature', function() {
 	CreatureController::debug();
 });
 
@@ -8,40 +22,39 @@ $routes->get('/listcreature', function() {
 	CreatureController::listcreature();
 });
 
-
-$routes->get('/', function() {
-	HelloWorldController::index();
-});
-
 $routes->get('/editcreature', function() {
-	HelloWorldController::editcreature();
+	CreatureController::editcreature();
 });
 
-$routes->get('/showcreature', function() {
-	HelloWorldController::showcreature();
+$routes->get('/showcreature/:id', function($id) {
+	CreatureController::showcreature($id);
 });
 
 $routes->get('/generatecreature', function() {
-	HelloWorldController::generatecreature();
+	CreatureController::generatecreature();
+});
+
+
+// GameMasters
+
+$routes->get('/debuggm', function() {
+	GmController::debuggm();
 });
 
 $routes->get('/listgm', function() {
-	HelloWorldController::listgm();
+	GmController::listgm();
 });
 
 $routes->get('/editgm', function() {
-	HelloWorldController::editgm();
+	GmController::editgm();
 });
 
 $routes->get('/generategm', function() {
-	HelloWorldController::generategm();
+	GmController::generategm();
 });
 
 $routes->get('/showgm', function() {
-	HelloWorldController::showgm();
+	GmController::showgm();
 });
 
-$routes->get('/sitemap', function() {
-	HelloWorldController::sitemap();
-});
 
