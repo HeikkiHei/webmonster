@@ -13,7 +13,7 @@ class CreatureController extends BaseController{
 
 	public static function showcreature($id) {
 		$creature = Creature::find($id);
-		View::make('creature/showcreature.html');
+		View::make('creature/showcreature.html', array($creature));
 	}
 
 	public static function generatecreature() {
