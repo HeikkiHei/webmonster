@@ -7,16 +7,18 @@ class GmController extends BaseController{
     View::make('gamemaster/listgm.html');
 }
 
-public static function editgm() {
-    View::make('gamemaster/editgm.html');
+public static function editgm($id) {
+    $gamemaster = Gamemaster::find($id);
+    View::make('gamemaster/editgm.html', array('gamemaster' => $gamemaster));
 }
 
 public static function generategm() {
     View::make('gamemaster/generategm.html');
 }
 
-public static function showgm() {
-    View::make('gamemaster/showgm.html');
+public static function showgm($id) {
+    $gamemaster = Gamemaster::find($id);
+    View::make('gamemaster/showgm.html', array('gamemaster' => $gamemaster));
 }
 
 
@@ -31,3 +33,5 @@ public static function debuggm(){
 }
 
 }
+
+

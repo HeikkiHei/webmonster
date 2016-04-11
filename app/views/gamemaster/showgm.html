@@ -5,9 +5,9 @@ Examine a GM
 {% endblock %}
 
 {% block content %}
-<h1>Kayttaja</h1>
+<h1>{{gamemaster.name}}</h1>
 <!--Nappi-->
-<p><a href="{{base_path}}/listgm" class="btn btn-danger">Delete</a> <a href="editgm" class="btn btn-success">Edit</a></p>
+<p><a href="{{base_path}}/listgm" class="btn btn-danger">Delete</a> <a href="{{base_path}}/editgm/{{gamemaster.id}}" class="btn btn-success">Edit</a></p>
 
 <table class="table table-striped table-bordered">
   <thead>

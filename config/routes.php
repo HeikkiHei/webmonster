@@ -53,16 +53,16 @@ $routes->get('/listgm', function() {
 	GmController::listgm();
 });
 
-$routes->get('/editgm', function() {
-	GmController::editgm();
+$routes->get('/editgm/:id', function($id) {
+	GmController::editgm($id);
 });
 
 $routes->get('/generategm', function() {
 	GmController::generategm();
 });
 
-$routes->get('/showgm', function() {
-	GmController::showgm();
+$routes->get('/showgm/:id', function($id) {
+	GmController::showgm($id);
 });
 
 
