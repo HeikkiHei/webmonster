@@ -15,12 +15,12 @@ INSERT INTO Weapon (name, description, minDamage, maxDamage) VALUES ('Lapio', 'H
 INSERT INTO Weapon (name, description, minDamage, maxDamage) VALUES ('Vasara', 'Sepän työkalu', 1, 10);
 
 INSERT INTO Creature (owner, name, race, creatureClass, level, strength, dexterity, constitution, intelligence, wisdom, charisma, hitpoints) VALUES
-(1, 1, 1, 2, 1, 8, 7, 8, 4, 4, 4, 15);
+('heikkihei', 'Pekka', 'Jättiläinen', 'Ritari', 1, 8, 7, 8, 4, 4, 4, 15);
 INSERT INTO Creature (owner, name, race, creatureClass, level, strength, dexterity, constitution, intelligence, wisdom, charisma, hitpoints) VALUES
-(1, 2, 2, 1, 1, 10, 10, 10, 10, 10, 10, 15);
+('heikkihei', 'Maija', 'Jättiläinen', 'Ritari', 1, 10, 10, 10, 10, 10, 10, 15);
 
 INSERT INTO Creature (owner, name, race, creatureClass, level, strength, dexterity, constitution, intelligence, wisdom, charisma, hitpoints) VALUES
-(2, 2, 2, 2, 2, 10, 10, 10, 10, 10, 10, 15);
+('kayttaja', 'Pekka', 'Jättiläinen', 'Maanviljelijä', 2, 10, 10, 10, 10, 10, 10, 15);
 
 
 INSERT INTO Inventory (creature_id, weapon_id) VALUES (1, 1);

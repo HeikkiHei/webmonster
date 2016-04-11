@@ -5,15 +5,15 @@ Examine a creature
 {% endblock %}
 
 {% block content %}
-{% for creature in creature %}
+
 <h1>{{creature.name}}</h1>
 <!--Nappi-->
-<p><a href="{{base_path}}/listcreature" class="btn btn-danger">Delete</a> <a href="{{base_path}}/editcreature" class="btn btn-success">Edit</a></p>
+<p><a href="{{base_path}}/listcreature" class="btn btn-danger">Delete</a> <a href="{{base_path}}/editcreature/{{creature.id}}" class="btn btn-success">Edit</a></p>
 <!-- Otsikot -->
 
 <div><div style="float: left;">
   <h3>Name</h3>
-  <p><a href="{{base_path}}/{{creature.id}}">{{creature.name}}</a></p>
+  <p><a href="{{base_path}}/showcreature/{{creature.id}}">{{creature.name}}</a></p>
 
   <h3>Race</h3>
   <p>{{creature.race}}</p>
@@ -26,25 +26,25 @@ Examine a creature
   <p>Lapio</p>
   <p>Vasara</p>
 </div>
-{% endfor %}
+
 <div><div style="float: right;">
   <h3>Level</h3>
-  <p>1</p>
+  <p>{{creature.level}}</p>
 
   <h3>Hitpoints</h3>
-  <p>10</p>
+  <p>{{creature.hitpoints}}</p>
   <h3>Strength</h3>
-  <p>10</p>
+  <p>{{creature.strength}}</p>
   <h3>Dexterity</h3>
-  <p>10</p>
+  <p>{{creature.dexterity}}</p>
   <h3>Constitution</h3>
-  <p>10</p>
+  <p>{{creature.constitution}}</p>
   <h3>Intelligence</h3>
-  <p>10</p>
+  <p>{{creature.intelligence}}</p>
   <h3>Wisdom</h3>
-  <p>10</p>
+  <p>{{creature.wisdom}}</p>
   <h3>Charisma</h3>
-  <p>10</p>
+  <p>{{creature.charisma}}</p>
 </div>
 
 

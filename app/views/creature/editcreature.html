@@ -5,89 +5,131 @@ Edit a creature
 {% endblock %}
 
 {% block content %}
-<h1>Edit: Maija</h1>
+<h1>Edit: {{creature.name}}</h1>
 
-<form>
-  <div class="checkbox">
-    <label>
-      <input type="checkbox">
-      Dead
-    </label>
+<form method="post" action="{{base_path}}/">
+  <div class="form-group">
+    <label>Dead</label>
+    <br>
+      <input type="checkbox" name="dead">
   </div>
   <div class="form-group">
     <label>Name</label>
-    <input type="text" class="form-control" value="Maija">
+    <br>
+    <select class="c-select" name="name"> <option selected hidden>{{creature.name}}</option>
+      {% for name in names %}
+      <option> {{name.name}} </option>
+      {% endfor %}
+    </select>
   </div>
   <div class="form-group">
     <label>Race</label>
-    <input type="text" class="form-control" value="Jättiläinen">
+    <br>
+    <select class="c-select" name="race"> <option selected hidden>{{creature.race}}</option>
+      {% for race in races %}
+      <option> {{race.name}} </option>
+      {% endfor %}
+    </select>
   </div>
   <div class="form-group">
     <label>Class</label>
-    <input type="text" class="form-control" value="Ritari">
-  </div>
-  <div class="form-group">
-    <label>Inventory</label>
-    <input type="text" class="form-control" value="Miekka">
-    <input type="text" class="form-control" value="Lapio">
-    <input type="text" class="form-control" value="Vasara">
+   <br>
+    <select class="c-select" name="creatureclass"> <option selected hidden>{{creature.creatureClass}}</option>
+      {% for creatureclass in creatureclasses %}
+      <option> {{creatureclass.name}} </option>
+      {% endfor %}
+    </select>
   </div>
 
   <div>
     <label style="white-space: pre">Level                 (between 1 and 100):</label>
     <br>
-    <input type="number" name="quantity" min="1" max="100">
+    <select class="c-select" name="level"> <option selected hidden>{{creature.level}}</option>
+      {% for i in 1..100 %}
+      <option> {{i}} </option>
+      {% endfor %}
+    </select>
   </div>
 
   <div>
     <br>
     <label style="white-space: pre">Hit points          (between -50 and 100):</label>
     <br>
-    <input type="number" name="quantity" min="-50" max="100">
+    <select class="c-select" name="hitpoints"> <option selected hidden>{{creature.hitpoints}}</option>
+      {% for i in -50..100 %}
+      <option> {{i}} </option>
+      {% endfor %}
+    </select>
   </div>
 
   <div>
     <br>
     <label style="white-space: pre">Strength            (between 0 and 100):</label>
     <br>
-    <input type="number" name="quantity" min="0" max="100">
+    <select class="c-select" name="strength"> <option selected hidden>{{creature.strength}}</option>
+      {% for i in 0..100 %}
+      <option> {{i}} </option>
+      {% endfor %}
+    </select>
   </div>
   <div>
     <br>
     <label style="white-space: pre">Dexterity            (between 0 and 100):</label>
     <br>
-    <input type="number" name="quantity" min="0" max="100">
+    <select class="c-select" name="dexterity"> <option selected hidden>{{creature.dexterity}}</option>
+      {% for i in 0..100 %}
+      <option> {{i}} </option>
+      {% endfor %}
+    </select>
   </div>
   <div>
     <br>
     <label style="white-space: pre">Constitution      (between 0 and 100):</label>
     <br>
-    <input type="number" name="quantity" min="0" max="100">
+    <select class="c-select" name="constitution"> <option selected hidden>{{creature.constitution}}</option>
+      {% for i in 0..100 %}
+      <option> {{i}} </option>
+      {% endfor %}
+    </select>
   </div>
   <div>
     <br>
     <label style="white-space: pre">Intelligence       (between 0 and 100):</label>
     <br>
-    <input type="number" name="quantity" min="0" max="100">
+    <select class="c-select" name="intelligence"> <option selected hidden>{{creature.intelligence}}</option>
+      {% for i in 0..100 %}
+      <option> {{i}} </option>
+      {% endfor %}
+    </select>
   </div>
   <div>
     <br>
     <label style="white-space: pre">Wisdom             (between 0 and 100):</label>
     <br>
-    <input type="number" name="quantity" min="0" max="100">
+    <select class="c-select" name="wisdom"> <option selected hidden>{{creature.wisdom}}</option>
+      {% for i in 0..100 %}
+      <option> {{i}} </option>
+      {% endfor %}
+    </select>
   </div>
   <div>
     <br>
     <label style="white-space: pre">Charisma          (between 0 and 100):</label>
     <br>
-    <input type="number" name="quantity" min="0" max="100">
+    <select class="c-select" name="charisma"> <option selected hidden>{{creature.charisma}}</option>
+      {% for i in 0..100 %}
+      <option> {{i}} </option>
+      {% endfor %}
+    </select>
   </div>
-
+  
+  <!--hidden owner data-->
+  <div class="form-group"><input type="hidden" name="owner" value="{{creature.owner}}"></div>
+  
   <br>
-
   <div class="form-group">
-  <a href="{{base_path}}/listcreature" class="btn btn-success">Save</a>
-    <a href="{{base_path}}/listcreature" class="btn btn-danger">Delete</a>
+    <button type="submit" class="btn btn-success">Save</a>
+    <button type="submit" class="btn btn-danger">Delete</a>
   </div>
 </form>
 

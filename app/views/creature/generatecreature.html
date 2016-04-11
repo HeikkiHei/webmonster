@@ -6,27 +6,58 @@ Generate a creature
 
 {% block content %}
 <h1>Generate creature</h1>
+
+
+
+
+<form method="post" action="{{base_path}}/">
+
+  <!--hidden owner data, static to heikkihei at the moment-->
+  <div class="form-group"><input type="hidden" name="owner" value="heikkihei"></div>
+  
   <div>
     <label style="white-space: pre">Level                 (between 1 and 100):</label>
     <br>
-    <input type="number" name="quantity" min="1" max="100">
+    <select class="c-select" name="level"> <option selected hidden>1</option>
+      {% for i in 1..100 %}
+      <option> {{i}} </option>
+      {% endfor %}
+    </select>
   </div>
+
 
   <div>
     <br>
-    <label style="white-space: pre">Hit points          (between 0 and 100):</label>
+    <label style="white-space: pre">Hit points          (between -50 and 100):</label>
     <br>
-    <input type="number" name="quantity" min="0" max="100">
+    <select class="c-select" name="hitpoints"> <option selected hidden>0</option>
+      {% for i in -50..100 %}
+      <option> {{i}} </option>
+      {% endfor %}
+    </select>
   </div>
+
 
   <br>
 
+  <div class="form-group"><input type="hidden" name="name" value={{random(["Pekka", "Maija"])}}></div>
+  <div class="form-group"><input type="hidden" name="race" value={{random(["Jättiläinen","Örkki"])}}></div>
+  <div class="form-group"><input type="hidden" name="creatureclass" value={{random(["Maanviljelijä", "Ritari"])}}></div>
+  <div class="form-group"><input type="hidden" name="strength" value={{random(50)}}></div>
+  <div class="form-group"><input type="hidden" name="dexterity" value={{random(50)}}></div>
+  <div class="form-group"><input type="hidden" name="constitution" value={{random(50)}}></div>
+  <div class="form-group"><input type="hidden" name="intelligence" value={{random(50)}}></div>
+  <div class="form-group"><input type="hidden" name="wisdom" value={{random(50)}}></div>
+  <div class="form-group"><input type="hidden" name="charisma" value={{random(50)}}></div>
+  
   <div class="form-group">
-  <a href="{{base_path}}/showcreature" class="btn btn-success">Generate</a>
-  </div>
-</form>
+    <button type="submit" class="btn btn-success">Generate</a>
+    </div>
+
+  </form>
 
 
 
 
-{% endblock %}
+  {% endblock %}
+

@@ -1,26 +1,26 @@
 -- Lisää CREATE TABLE lauseet tähän tiedostoon
 CREATE TABLE Gamemaster (
 	id SERIAL PRIMARY KEY,
-	name varchar(50) NOT NULL,
+	name varchar(50) UNIQUE NOT NULL,
 	password varchar(50) NOT NULL,
 	moderator boolean NOT NULL
 );
 
 CREATE TABLE Name (
 	id SERIAL PRIMARY KEY,
-	name varchar(50) NOT NULL,
+	name varchar(50) UNIQUE NOT NULL,
 	description varchar(200) NOT NULL
 );
 
 CREATE TABLE CreatureClass (
 	id SERIAL PRIMARY KEY,
-	name varchar(50) NOT NULL,
+	name varchar(50) UNIQUE NOT NULL,
 	description varchar(200) NOT NULL
 );
 
 CREATE TABLE Race (
 	id SERIAL PRIMARY KEY,
-	name varchar(50) NOT NULL,
+	name varchar(50) UNIQUE NOT NULL,
 	description varchar(200) NOT NULL
 );
 
@@ -34,10 +34,10 @@ CREATE TABLE Weapon (
 
 CREATE TABLE Creature (
 	id SERIAL PRIMARY KEY,
-	owner int REFERENCES Gamemaster(id) NOT NULL,
-	name int REFERENCES Name(id) NOT NULL,
-	race int REFERENCES Race(id) NOT NULL,
-	creatureClass int REFERENCES CreatureClass(id) NOT NULL,
+	owner varchar(50) REFERENCES Gamemaster(name) NOT NULL,
+	name varchar(50) REFERENCES Name(name) NOT NULL,
+	race varchar(50)REFERENCES Race(name) NOT NULL,
+	creatureClass varchar(50) REFERENCES CreatureClass(name) NOT NULL,
 	level int NOT NULL,
 	strength int NOT NULL,
 	dexterity int NOT NULL,

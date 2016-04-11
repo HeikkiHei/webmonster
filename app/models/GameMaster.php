@@ -31,17 +31,17 @@ class Gamemaster extends BaseModel {
 		$query->execute();
 		$rows = $query->fetchAll();
 		
-		$creatures = array();
+		$gamemasters = array();
 
 		foreach ($rows as $row) {
-			$creatures[] = new Gamemaster(array(
+			$gamemasters[] = new Gamemaster(array(
 				'id' => $row['id'],
 				'name' => $row['name'],
 				'password' => $row['password'],
 				'moderator' => $row['moderator']
 				));
 		}
-		return $creatures;
+		return $gamemasters;
 	}
 
 		public static function findname($name) {

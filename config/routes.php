@@ -12,7 +12,7 @@ $routes->get('/sitemap', function() {
 });
 
 
-//Creatures
+//Creatures get
 
 $routes->get('/debugcreature', function() {
 	CreatureController::debug();
@@ -22,8 +22,12 @@ $routes->get('/listcreature', function() {
 	CreatureController::listcreature();
 });
 
-$routes->get('/editcreature', function() {
-	CreatureController::editcreature();
+$routes->post('/', function() {
+	CreatureController::savecreature();
+});
+
+$routes->get('/editcreature/:id', function($id) {
+	CreatureController::editcreature($id);
 });
 
 $routes->get('/showcreature/:id', function($id) {
