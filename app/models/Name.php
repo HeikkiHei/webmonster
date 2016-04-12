@@ -2,14 +2,14 @@
 
 	class Name extends BaseModel {
 
-		public $id, $name, $description;
+		public $id, $name;
 
 		public function __construct($attributes) {
 			parent::__construct($attributes);
 		}
 
 		public static function getaname() {
-			$query = DB::connection()->prepare('SELECT name.id AS id, name.name AS name, name.description AS description FROM name ORDER BY random() LIMIT 1');
+			$query = DB::connection()->prepare('SELECT * FROM name ORDER BY random() LIMIT 1');
 
 			$query->execute();
 			$row = $query->fetch();
@@ -17,11 +17,27 @@
 			if($row) {
 				$name = new Name(array(
 					'id' => $row['id'],
-					'name' => $row['name'],
-					'description' => $row['description']
+					'name' => $row['name']
 					));
 				return $name;
 			}
 			return null;
+		}
+
+		public static function getnames(){
+			$query = DB::connection()->prepare('SELECT * FROM name');
+
+			$query->execute();
+			$rows = $query->fetchAll();
+
+			$names = array();
+
+			foreach ($rows as $row) {
+				$names[] = new Name(array(
+					'id' => $row['id'],
+					'name' => $row['name']
+					));
+			}
+			return $names;
 		}
 	}

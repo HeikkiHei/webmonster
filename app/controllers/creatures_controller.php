@@ -9,9 +9,9 @@ class CreatureController extends BaseController{
 
 	public static function editcreature($id) {
 		$creature = Creature::find($id);
-		$names = Creature::getnames();
-		$races = Creature::getraces();
-		$creatureclasses = Creature::getcreatureclasses();
+		$names = Name::getnames();
+		$races = Race::getraces();
+		$creatureclasses = CreatureClass::getcreatureclasses();
 		View::make('creature/editcreature.html', array('creature' => $creature, 'names' => $names, 'races' => $races, 'creatureclasses' => $creatureclasses));
 	}
 
@@ -72,15 +72,13 @@ class CreatureController extends BaseController{
 		Redirect::to('/showcreature/' . $creature->id, array('message' => 'test'));
 	}
 
-
-
-
-
 	public static function debug(){
 		$onecreature = Creature::find(1);
 		$creatures = Creature::all();
+		$name = Name::getaname();
 		Kint::dump($creatures);
 		Kint::dump($onecreature);
+		Kint::dump($name);
 	}
 
 }

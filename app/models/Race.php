@@ -15,7 +15,7 @@
 			$row = $query->fetch();
 
 			if($row) {
-				$race = new Name(array(
+				$race = new Race(array(
 					'id' => $row['id'],
 					'name' => $row['name'],
 					'description' => $row['description']
@@ -23,5 +23,24 @@
 				return $race;
 			}
 			return null;
+		}
+
+
+		public static function getraces(){
+			$query = DB::connection()->prepare('SELECT * FROM race');
+
+			$query->execute();
+			$rows = $query->fetchAll();
+
+			$races = array();
+
+			foreach ($rows as $row) {
+				$races[] = new Race(array(
+					'id' => $row['id'],
+					'name' => $row['name'],
+					'description' => $row['description']
+					));
+			}
+			return $races;
 		}
 	}

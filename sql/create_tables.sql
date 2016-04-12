@@ -8,8 +8,7 @@ CREATE TABLE Gamemaster (
 
 CREATE TABLE Name (
 	id SERIAL PRIMARY KEY,
-	name varchar(50) UNIQUE NOT NULL,
-	description varchar(200) NOT NULL
+	name varchar(50) UNIQUE NOT NULL
 );
 
 CREATE TABLE CreatureClass (
@@ -21,7 +20,7 @@ CREATE TABLE CreatureClass (
 CREATE TABLE Race (
 	id SERIAL PRIMARY KEY,
 	name varchar(50) UNIQUE NOT NULL,
-	description varchar(200) NOT NULL
+	description varchar(2000) NOT NULL
 );
 
 CREATE TABLE Weapon (

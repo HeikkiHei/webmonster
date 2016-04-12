@@ -24,4 +24,30 @@
 			}
 			return null;
 		}
+
+		public static function getfromfile() {
+			return $lines = file("classes.txt", FILE_IGNORE_NEW_LINES);
+		}
+
+			public static function getcreatureclasses(){
+		$query = DB::connection()->prepare('SELECT * FROM creatureclass');
+		
+		$query->execute();
+		$rows = $query->fetchAll();
+		
+		$creatureclasses = array();
+
+		foreach ($rows as $row) {
+			$creatureclasses[] = new CreatureClass(array(
+				'id' => $row['id'],
+				'name' => $row['name'],
+				'description' => $row['description']
+				));
+		}
+		return $creatureclasses;
 	}
+
+
+	}
+
+
