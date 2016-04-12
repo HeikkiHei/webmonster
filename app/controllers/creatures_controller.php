@@ -44,10 +44,10 @@ class CreatureController extends BaseController{
 	}
 
 	public static function generatecreature() {
-		$names = Creature::getnames();
-		$races = Creature::getraces();
-		$creatureclasses = Creature::getcreatureclasses();
-		View::make('creature/generatecreature.html', array('names' => $names, 'races' => $races, 'creatureclasses' => $creatureclasses));
+		$name = Name::getaname();
+		$race = Race::getarace();
+		$creatureclass = CreatureClass::getacreatureclass();
+		View::make('creature/generatecreature.html', array('name' => $name, 'race' => $race, 'creatureclass' => $creatureclass));
 	}
 
 	public static function savecreature() {
