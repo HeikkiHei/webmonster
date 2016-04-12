@@ -7,6 +7,8 @@ INSERT INTO Name (name, description) VALUES ('Maija', 'Perinteinen suomalainen n
 INSERT INTO CreatureClass (name, description) VALUES ('Ritari', 'Kiiltävä haarinska');
 INSERT INTO CreatureClass (name, description) VALUES ('Maanviljelijä', 'Ei niin kiiltävä');
 
+\copy CreatureClass FROM '~/home/heikkihei/tsoha/class.txt' WITH DELIMITER ','
+
 INSERT INTO Race (name, description) VALUES ('Örkki', 'Vihreä ja pieni');
 INSERT INTO Race (name, description) VALUES ('Jättiläinen', 'Ruskea ja iso');
 
