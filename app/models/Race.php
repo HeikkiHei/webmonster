@@ -8,7 +8,7 @@
 			parent::__construct($attributes);
 		}
 
-		public static function getarace() {
+		public static function getRace() {
 			$query = DB::connection()->prepare('SELECT race.id AS id, race.name AS name, race.description AS description FROM race ORDER BY random() LIMIT 1');
 
 			$query->execute();
@@ -26,7 +26,7 @@
 		}
 
 
-		public static function getraces(){
+		public static function getRaces(){
 			$query = DB::connection()->prepare('SELECT * FROM race');
 
 			$query->execute();

@@ -8,6 +8,7 @@ class Creature extends BaseModel {
 		parent::__construct($attributes);
 	}
 
+
 	public static function find($id) {
 		$query = DB::connection()->prepare('SELECT creature.id AS id, gamemaster.name AS owner, name.name AS name, race.name AS race, creature.level as level, creatureClass.name AS creatureClass, creature.strength AS strength, creature.dexterity AS dexterity, creature.constitution AS constitution, creature.intelligence AS intelligence, creature.wisdom AS wisdom, creature.charisma AS charisma, creature.hitpoints AS hitpoints
 			FROM creature, name, gamemaster, creatureClass, race
@@ -113,5 +114,11 @@ class Creature extends BaseModel {
 			));
 	}
 
+	public function destroy($id) {
+		$query = DB::connection()->prepare('DELETE FROM creature
+			WHERE creature.id = :id');
+
+		$query->execute(array('id'=>$id));
+	}
 
 }

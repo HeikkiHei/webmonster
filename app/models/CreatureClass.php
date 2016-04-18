@@ -8,7 +8,7 @@
 			parent::__construct($attributes);
 		}
 
-		public static function getacreatureclass() {
+		public static function getCreatureClass() {
 			$query = DB::connection()->prepare('SELECT creatureclass.id AS id, creatureclass.name AS name, creatureclass.description AS description FROM creatureclass ORDER BY random() LIMIT 1');
 
 			$query->execute();
@@ -25,11 +25,8 @@
 			return null;
 		}
 
-		public static function getfromfile() {
-			return $lines = file("classes.txt", FILE_IGNORE_NEW_LINES);
-		}
 
-			public static function getcreatureclasses(){
+			public static function getCreatureClasses(){
 		$query = DB::connection()->prepare('SELECT * FROM creatureclass');
 		
 		$query->execute();

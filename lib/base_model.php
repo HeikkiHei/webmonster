@@ -26,4 +26,16 @@
       return $errors;
     }
 
+    
+  public function validate_name() {
+    $errors = array();
+    if($this->name == '' || $this->name == null) {
+      $errors[] = 'Name must not be empty';
+    }
+    if(strlen($this->name) < 4) {
+      $errors[] = 'Name must be at least 4 characters long';
+    }
+    return $errors;
+  }
+
   }

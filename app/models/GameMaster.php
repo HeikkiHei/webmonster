@@ -44,7 +44,7 @@ class Gamemaster extends BaseModel {
 		return $gamemasters;
 	}
 
-		public static function findname($name) {
+		public static function findName($name) {
 		$query = DB::connection()->prepare('SELECT * FROM gamemaster WHERE name = :name LIMIT 1');
 		$query->execute(array('name'=>$name));
 		$row = $query->fetch();

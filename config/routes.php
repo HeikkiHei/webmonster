@@ -19,26 +19,30 @@ $routes->get('/debugcreature', function() {
 });
 
 $routes->get('/listcreature', function() {
-	CreatureController::listcreature();
-});
-
-$routes->get('/showcreature/:id', function($id) {
-	CreatureController::showcreature($id);
+	CreatureController::listCreature();
 });
 
 $routes->get('/generatecreature', function() {
-	CreatureController::generatecreature();
+	CreatureController::generateCreature();
 });
 $routes->post('/generatecreature/', function() {
-	CreatureController::savecreature();
+	CreatureController::saveCreature();
 });
 
 $routes->get('/editcreature/:id', function($id) {
-	CreatureController::editcreature($id);
+	CreatureController::editCreature($id);
 });
 
 $routes->post('/editcreature/:id', function($id) {
-	CreatureController::updatecreature($id);
+	CreatureController::updateCreature($id);
+});
+
+$routes->get('/showcreature/:id', function($id) {
+	CreatureController::showCreature($id);
+});
+
+$routes->post('/showcreature/:id', function($id) {
+	CreatureController::destroy($id);
 });
 
 
@@ -46,23 +50,23 @@ $routes->post('/editcreature/:id', function($id) {
 // GameMasters
 
 $routes->get('/debuggm', function() {
-	GmController::debuggm();
+	GmController::debugGM();
 });
 
 $routes->get('/listgm', function() {
-	GmController::listgm();
+	GmController::listGM();
 });
 
 $routes->get('/editgm/:id', function($id) {
-	GmController::editgm($id);
+	GmController::editGM($id);
 });
 
 $routes->get('/generategm', function() {
-	GmController::generategm();
+	GmController::generateGM();
 });
 
 $routes->get('/showgm/:id', function($id) {
-	GmController::showgm($id);
+	GmController::showGM($id);
 });
 
 

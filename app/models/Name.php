@@ -8,7 +8,7 @@
 			parent::__construct($attributes);
 		}
 
-		public static function getaname() {
+		public static function getName() {
 			$query = DB::connection()->prepare('SELECT * FROM name ORDER BY random() LIMIT 1');
 
 			$query->execute();
@@ -24,7 +24,7 @@
 			return null;
 		}
 
-		public static function getnames(){
+		public static function getNames(){
 			$query = DB::connection()->prepare('SELECT * FROM name');
 
 			$query->execute();

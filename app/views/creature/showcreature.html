@@ -8,7 +8,13 @@ Examine a creature
 
 <h1>{{creature.name}}</h1>
 <!--Nappi-->
-<p><a href="{{base_path}}/listcreature" class="btn btn-danger">Delete</a> <a href="{{base_path}}/editcreature/{{creature.id}}" class="btn btn-success">Edit</a></p>
+
+<div class="form-group">
+ <a href="{{base_path}}/editcreature/{{creature.id}}" class="btn btn-success">Edit</a>
+ <form method="post" action="{{base_path}}/showcreature/{{creature.id}}">
+  <button type="submit" class="btn btn-danger">Delete</a>
+  </form>
+</div>
 <!-- Otsikot -->
 
 <div><div style="float: left;">

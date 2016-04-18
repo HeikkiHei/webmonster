@@ -3,33 +3,33 @@
 class GmController extends BaseController{
 	
 
-  public static function listgm() {
+  public static function listGM() {
     View::make('gamemaster/listgm.html');
 }
 
-public static function editgm($id) {
+public static function editGM($id) {
     $gamemaster = Gamemaster::find($id);
     View::make('gamemaster/editgm.html', array('gamemaster' => $gamemaster));
 }
 
-public static function generategm() {
+public static function generateGM() {
     View::make('gamemaster/generategm.html');
 }
 
-public static function showgm($id) {
+public static function showGM($id) {
     $gamemaster = Gamemaster::find($id);
     View::make('gamemaster/showgm.html', array('gamemaster' => $gamemaster));
 }
 
 
 
-public static function debuggm(){
-    $onegm = Gamemaster::find(1);
+public static function debugGM(){
+    $oneGm = Gamemaster::find(1);
     $gms = Gamemaster::all();
-    $gmname = Gamemaster::findname('heikkihei');
+    $gmName = Gamemaster::findName('heikkihei');
     Kint::dump($gms);
-    Kint::dump($onegm);
-    Kint::dump($gmname);
+    Kint::dump($oneGm);
+    Kint::dump($gmName);
 }
 
 }
