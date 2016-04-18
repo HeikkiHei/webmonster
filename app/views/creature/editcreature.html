@@ -12,6 +12,7 @@ Edit a creature
   <!--hidden owner data-->
   <div class="form-group"><input type="hidden" name="id" value="{{creature.id}}"></div>
   <div class="form-group"><input type="hidden" name="owner" value="{{creature.owner}}"></div>
+  <div class="form-group"><input type="hidden" name="owner_id" value="{{creature.owner_id}}"></div>
 
 
   <div class="form-group">
@@ -134,10 +135,10 @@ Edit a creature
   <br>
   <div class="form-group">
     <button type="submit" class="btn btn-success">Save</a>
-      </div>
-    </form>
+    </div>
+  </form>
 
 
 
 
-    {% endblock %}
+  {% endblock %}

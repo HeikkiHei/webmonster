@@ -10,16 +10,25 @@ Examine a creature
 <!--Nappi-->
 
 <div class="form-group">
+
  <a href="{{base_path}}/editcreature/{{creature.id}}" class="btn btn-success">Edit</a>
+</div>
+<div>
  <form method="post" action="{{base_path}}/showcreature/{{creature.id}}">
   <button type="submit" class="btn btn-danger">Delete</a>
   </form>
 </div>
 <!-- Otsikot -->
 
+{% if message %}
+<div class="alert alert-success">
+  {{message}}
+</div>
+{% endif %}
+
 <div><div style="float: left;">
   <h3>Name</h3>
-  <p><a href="{{base_path}}/showcreature/{{creature.id}}">{{creature.name}}</a></p>
+  <p><a href="{{base_path}}/editcreature/{{creature.id}}">{{creature.name}}</a></p>
 
   <h3>Race</h3>
   <p>{{creature.race}}</p>

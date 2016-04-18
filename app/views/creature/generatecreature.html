@@ -10,10 +10,11 @@ Generate a creature
 
 
 
-<form method="post" action="{{base_path}}/generatecreature/">
+<form method="post" action="{{base_path}}/generatecreature">
 
   <!--hidden owner data, static to heikkihei at the moment-->
-  <div class="form-group"><input type="hidden" name="owner" value="heikkihei"></div>
+  <div class="form-group"><input type="hidden" name="owner" value="{{gamemaster_logged_in.name}}"></div>
+  <div class="form-group"><input type="hidden" name="owner_id" value="{{gamemaster_logged_in.id}}"></div>
   
   <div>
     <label style="white-space: pre">Level                 (between 1 and 100):</label>

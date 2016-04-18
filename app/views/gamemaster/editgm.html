@@ -7,7 +7,7 @@ Edit a Game Master
 {% block content %}
 <h1>Edit: {{gamemaster.name}}</h1>
 
-<form>
+<form method="post" action="{{base_path}}/showgm/{{gamemaster.id}}">
 	<div class="checkbox">
 		<label>
 			<input type="checkbox">
@@ -16,18 +16,22 @@ Edit a Game Master
 	</div>
 	<div class="form-group">
 		<label>Name</label>
-		<input type="text" class="form-control" value="{{gamemaster.name}}">
+		<input type="text" class="form-control" name="name" value="{{gamemaster.name}}">
 	</div>
 	<div class="form-group">
 		<label>Password</label>
-		<input type="text" class="form-control" value="{{gamemaster.password}}">
+		<input type="password" class="form-control" name="password" value="{{gamemaster.password}}">
 	</div>
 
 	<br>
 
 	<div class="form-group">
-		<a href="{{base_path}}/listgm" class="btn btn-success">Save</a>
-		<a href="{{base_path}}/listgm" class="btn btn-danger">Delete</a>
+		<button type="submit" class="btn btn-success">Save</button>
+	</div>
+</form>
+<form method="post" action="{{base_path}}/showgm/{{gamemaster.id}}/delete">
+	<div class="form-group">
+		<button type="submit" class="btn btn-danger">Delete</button>
 	</div>
 </form>
 

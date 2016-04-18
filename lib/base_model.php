@@ -38,4 +38,15 @@
     return $errors;
   }
 
+    public function validate_password() {
+    $errors = array();
+    if($this->password == '' || $this->password == null) {
+      $errors[] = 'Password must not be empty';
+    }
+    if(strlen($this->password) < 6) {
+      $errors[] = 'Password must be at least 6 characters long';
+    }
+    return $errors;
+  }
+
   }

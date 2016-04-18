@@ -7,8 +7,16 @@ $routes->get('/', function() {
 	SiteController::index();
 });
 
+$routes->get('/login', function() {
+	SiteController::index();
+});
+
 $routes->get('/sitemap', function() {
 	SiteController::sitemap();
+});
+
+$routes->post('/login', function() {
+	GmController::handle_login();
 });
 
 
@@ -25,7 +33,7 @@ $routes->get('/listcreature', function() {
 $routes->get('/generatecreature', function() {
 	CreatureController::generateCreature();
 });
-$routes->post('/generatecreature/', function() {
+$routes->post('/generatecreature', function() {
 	CreatureController::saveCreature();
 });
 
@@ -65,8 +73,13 @@ $routes->get('/generategm', function() {
 	GmController::generateGM();
 });
 
+$routes->post('/generategm', function() {
+	GmController::saveGM();
+});
+
 $routes->get('/showgm/:id', function($id) {
 	GmController::showGM($id);
 });
+
 
 

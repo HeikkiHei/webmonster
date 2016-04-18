@@ -5,11 +5,20 @@ Personal creature list
 {% endblock %}
 
 {% block content %}
-  <h1>Your monsters</h1>
+
+{% if gamemaster_logged_in %}
+  <h1>Your monsters, {{gamemaster_logged_in.name}}</h1>
+{% endif %}
 
   <p>
     <a href="{{base_path}}/generatecreature" class="btn btn-success">Generate monster</a>
   </p>
+
+{% if message%}
+  <div class="alert alert-success">
+  {{message}}
+</div>
+{% endif %}
 
   <table class="table table-striped table-bordered">
     <thead>

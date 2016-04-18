@@ -15,24 +15,19 @@ Game Master List
   <thead>
     <tr>
       <th>Name</th>
-      <th>Password</th>
+      <th>Moderator</th>
       <th>Edit</th>
     </tr>
   </thead>
   <tbody>
+    {% for gamemaster in gamemasters %}
 
-    <tr>
-      <td><a href="#">kayttaja</a></td>
-      <td>salasana</td>
-      <td><a href="{{base_path}}/editgm" class="btn btn-default">Edit</a></td>
-
-    </tr>
-
-    <tr>
-      <td><a href="#">heikkihei</a></td>
-      <td>tsohasalasana</td>
-      <td><a href="{{base_path}}/editgm" class="btn btn-default">Edit</a></td>
-    </tr>
+      <tr>
+        <td><a href="{{base_path}}/showgm/{{gamemaster.id}}">{{gamemaster.name}}</a></td>
+        <td>{{gamemaster.moderator}}</td>
+        <th><a class="btn btn-default btn-sm" href="{{base_path}}/editgm/{{gamemaster.id}}">Edit</a></th>
+      </tr>
+      {% endfor %}
   </tbody>
 </table>
 

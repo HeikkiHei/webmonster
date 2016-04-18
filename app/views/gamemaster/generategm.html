@@ -7,29 +7,33 @@ Create a Game Master
 {% block content %}
 <h1>Generate a GM</h1>
 
-<form>
-	<div class="checkbox">
-		<label>
-			<input type="checkbox">
-			Moderator
-		</label>
-	</div>
+<form method="post" action="{{base_path}}/generategm">
 	<div class="form-group">
 		<label>Name</label>
-		<input type="text" class="form-control" value="">
+		<input type="text" name="name" class="form-control" value="">
 	</div>
 	<div class="form-group">
 		<label>Password</label>
-		<input type="text" class="form-control" value="">
+		<input type="password" name="password" class="form-control" value="">
 	</div>
 
 	<br>
 
 	<div class="form-group">
-		<a href="{{base_path}}/showgm" class="btn btn-success">Generate</a>
+		<button type="submit" class="btn btn-success">Register</button>
 	</div>
+	<div class="form-group"><input type="hidden" name="moderator" value=0></div>
 
 </form>
 
+{%if errors %}
+<div class="alert alert-danger">
+	<ul>
+		{% for error in errors %}
+		<li>{{error}}</li>
+		{% endfor %}
+	</ul>
+</div>
+{% endif %}
 
 {% endblock %}
