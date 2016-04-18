@@ -98,6 +98,16 @@ class Gamemaster extends BaseModel {
 		return $creatures;
 	}
 
+		public function update() {
+		$query = DB::connection()->prepare('UPDATE gamemaster SET (name, password, moderator) =
+			(:name, :password, :moderator) WHERE id = :id');
+		$query->execute(array('id' => $this->id,
+			'name' => $this->name,
+			'password' => $this->password,
+			'moderator' => $this->moderator
+			));
+	}
+
 	public function save() {
 		$query = DB::connection()->prepare('INSERT INTO gamemaster (name, password, moderator) VALUES
 			(:name, :password, :moderator) RETURNING id');

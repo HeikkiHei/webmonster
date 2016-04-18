@@ -12,7 +12,7 @@ class BaseController{
     return null;
   }
 
-    public static function get_gamemaster_id(){
+  public static function get_gamemaster_id(){
     if(isset($_SESSION['gamemaster'])) {
       $gamemaster_id = $_SESSION['gamemaster'];
 

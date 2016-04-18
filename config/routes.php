@@ -69,6 +69,14 @@ $routes->get('/editgm/:id', function($id) {
 	GmController::editGM($id);
 });
 
+$routes->post('/editgm/:id', function($id) {
+	GmController::updateGM($id);
+});
+
+$routes->post('/showgm/:id/delete', function($id) {
+	GmController::destroy($id);
+});
+
 $routes->get('/generategm', function() {
 	GmController::generateGM();
 });

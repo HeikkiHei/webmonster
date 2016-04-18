@@ -7,13 +7,12 @@ Examine a GM
 {% block content %}
 <h1>{{gamemaster.name}}</h1>
 <!--Nappi-->
-<p><a href="{{base_path}}/listgm" class="btn btn-danger">Delete</a> <a href="{{base_path}}/editgm/{{gamemaster.id}}" class="btn btn-success">Edit</a></p>
+<p> <a href="{{base_path}}/editgm/{{gamemaster.id}}" class="btn btn-success">Edit</a></p>
 
 <table class="table table-striped table-bordered">
   <thead>
     <tr>
       <th>Name</th>
-      <th>Password</th>
       <th>Moderator</th>
     </tr>
   </thead>
@@ -21,7 +20,6 @@ Examine a GM
 
     <tr>
       <td><a href="#">{{gamemaster.name}}</a></td>
-      <td>{{gamemaster.password}}</td>
       <td>{{gamemaster.moderator}}</td>
     </tr>
 
