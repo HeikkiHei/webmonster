@@ -73,6 +73,7 @@ class CreatureController extends BaseController{
 	}
 
 	public static function destroy($id) {
+
 		$creature = new Creature(array('id' => $id));
 		$creature->destroy($id);
 
