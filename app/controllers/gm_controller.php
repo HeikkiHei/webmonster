@@ -59,6 +59,7 @@ public static function updateGM($id) {
     if(count($errors) > 0) {
         View::make('gamemaster/editgm.html', array('errors' => $errors, 'gamemaster' => $gamemaster, 'gamemaster_logged_in' => $gamemaster_logged_in));
     }else {
+        $gamemaster->updateMyCreatures($id);
         $gamemaster->update();
         Redirect::to('/showgm/' . $gamemaster->id, array('message' => 'Gamemaster successfully updated!', 'gamemaster_logged_in' => $gamemaster_logged_in));
     }

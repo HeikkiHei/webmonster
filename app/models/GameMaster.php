@@ -98,9 +98,16 @@ class Gamemaster extends BaseModel {
 		return $creatures;
 	}
 
-		public function update() {
+	public static function updateMyCreatures($owner_id){
+		$query = DB::connection()->prepare('UPDATE Creature SET (owner) = (:owner) WHERE owner_id = :owner_id');
+
+		$query->execute(array('owner_id' => $this->owner_id));
+	}
+
+	public function update() {
 		$query = DB::connection()->prepare('UPDATE gamemaster SET (name, password, moderator) =
 			(:name, :password, :moderator) WHERE id = :id');
+
 		$query->execute(array('id' => $this->id,
 			'name' => $this->name,
 			'password' => $this->password,
