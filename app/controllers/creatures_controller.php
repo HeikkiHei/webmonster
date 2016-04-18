@@ -5,7 +5,7 @@ class CreatureController extends BaseController{
 	public static function listCreature() {
 		$gamemaster_logged_in = self::get_gamemaster_logged_in();
 		$gamemaster_id = self::get_gamemaster_id();
-		$creatures = Gamemaster::myCreatures($gamemaster_id);
+		$creatures = Creature::myCreatures($gamemaster_id);
 		View::make('creature/listcreature.html', array('creatures' => $creatures, 'gamemaster_logged_in' => $gamemaster_logged_in));
 	}
 
@@ -22,7 +22,6 @@ class CreatureController extends BaseController{
 		$gamemaster_logged_in = self::get_gamemaster_logged_in();
 		$params = $_POST;
 		$attributes = array('id'=> $id,
-			'owner' => $params['owner'],
 			'owner_id' => $params['owner_id'],
 			'name' => $params['name'],
 			'race' => $params['race'],
@@ -61,7 +60,6 @@ class CreatureController extends BaseController{
 		$gamemaster_logged_in = self::get_gamemaster_logged_in();
 		$params = $_POST;
 		$creature = new Creature(array(
-			'owner' => $params['owner'],
 			'owner_id' => $params['owner_id'],
 			'name' => $params['name'],
 			'race' => $params['race'],
@@ -97,5 +95,7 @@ class CreatureController extends BaseController{
 		Kint::dump($onecreature);
 		Kint::dump($name);
 	}
+
+
 
 }

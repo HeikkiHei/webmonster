@@ -62,47 +62,8 @@ class Gamemaster extends BaseModel {
 	}
 
 	
-	public static function myCreatures($owner_id){
-		$query = DB::connection()->prepare('SELECT creature.id AS id, gamemaster.name AS owner, gamemaster.id AS owner_id, name.name AS name, race.name AS race, creature.level as level, creatureClass.name AS creatureClass, creature.strength AS strength, creature.dexterity AS dexterity, creature.constitution AS constitution, creature.intelligence AS intelligence, creature.wisdom AS wisdom, creature.charisma AS charisma, creature.hitpoints AS hitpoints
-			FROM creature, name, gamemaster, creatureClass, race
-			WHERE creature.name = name.name
-			AND creature.race = race.name
-			AND creature.creatureClass = creatureClass.name
-			AND creature.owner = gamemaster.name
-			AND creature.owner_id = :owner_id
-			ORDER BY creature.id ASC');
 
-		$query->execute(array('owner_id'=>$owner_id));
-		$rows = $query->fetchAll();
 
-		$creatures = array();
-
-		foreach ($rows as $row) {
-			$creatures[] = new Creature(array(
-				'id' => $row['id'],
-				'owner' => $row['owner'],
-				'owner_id' => $row['owner_id'],
-				'name' => $row['name'],
-				'race' => $row['race'],
-				'creatureClass' => $row['creatureclass'],
-				'level' => $row['level'],
-				'strength' => $row['strength'],
-				'dexterity' => $row['dexterity'],
-				'constitution' => $row['constitution'],
-				'intelligence' => $row['intelligence'],
-				'wisdom' => $row['wisdom'],
-				'charisma' => $row['charisma'],
-				'hitpoints' => $row['hitpoints']
-				));
-		}
-		return $creatures;
-	}
-
-	public static function updateMyCreatures($owner_id){
-		$query = DB::connection()->prepare('UPDATE Creature SET (owner) = (:owner) WHERE owner_id = :owner_id');
-
-		$query->execute(array('owner_id' => $this->owner_id));
-	}
 
 	public function update() {
 		$query = DB::connection()->prepare('UPDATE gamemaster SET (name, password, moderator) =

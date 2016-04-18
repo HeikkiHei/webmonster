@@ -6,25 +6,21 @@
 
 			{% block content %}
 
-			<h1>Page under construction, pages are static and no login required</h1>
+			<h1>Page under construction, no login required</h1>
 
 			<div class="form-group">	
 				<h3>Open pages</h3>
 				<a href="{{base_path}}/sitemap" class="btn btn-success">Sitemap</a>
 				<a href="{{base_path}}" class="btn btn-success">Login</a>
+				<a href="{{base_path}}/generategm" class="btn btn-success">Register</a>
 			</div>
 			<div class="form-group">
 				<h3>Game Master login required</h3>
 				<a href="{{base_path}}/generatecreature" class="btn btn-success">Generate creature</a>
-				<a href="{{base_path}}/editcreature/1" class="btn btn-success">Edit creature with id 1</a>
-				<a href="{{base_path}}/showcreature/1" class="btn btn-success">Show Creature with id 1</a>
 				<a href="{{base_path}}/listcreature" class="btn btn-success">List Creatures</a>
 			</div>
 			<div class="form-group">
 				<h3>Moderator login required</h3>
-				<a href="{{base_path}}/generategm" class="btn btn-success">Generate GM</a>
-				<a href="{{base_path}}/editgm/2" class="btn btn-success">Edit GM with id 2</a>
-				<a href="{{base_path}}/showgm/2" class="btn btn-success">Show GM with id 2</a>
 				<a href="{{base_path}}/listgm" class="btn btn-success">List GM</a>
 			</div>
 
