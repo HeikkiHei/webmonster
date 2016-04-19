@@ -38,6 +38,14 @@
     return $errors;
   }
 
+    public function validate_free_name($name) {
+    $errors = array();
+    if(Gamemaster::findName($name)) {
+      $errors[] = 'Name already in use';
+    }
+    return $errors;
+  }
+
     public function validate_password() {
     $errors = array();
     if($this->password == '' || $this->password == null) {

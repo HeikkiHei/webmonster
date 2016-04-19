@@ -29,16 +29,16 @@ public static function saveGM() {
         'password' => $params['password'],
         'moderator' => $params['moderator']
         ));
+    $nameUsed = $gamemaster->validate_free_name($params['name']);
     $nameErrors = $gamemaster->validate_name();
     $passwordErrors = $gamemaster->validate_password();
 
-    $errors = array_merge($nameErrors, $passwordErrors);
+    $errors = array_merge($nameErrors, $passwordErrors, $nameUsed);
     if(count($errors) > 0) {
         View::make('gamemaster/generategm.html', array('errors' => $errors));
     }else {
         $gamemaster->save();
-
-        View::make('gamemaster/showgm.html', array('gamemaster' => $gamemaster));
+        GmController::handle_login();
     }
 }
 
@@ -60,6 +60,7 @@ public static function updateGM($id) {
         View::make('gamemaster/editgm.html', array('errors' => $errors, 'gamemaster' => $gamemaster, 'gamemaster_logged_in' => $gamemaster_logged_in));
     }else {
         $gamemaster->update();
+        $_SESSION['gamemaster'] = $gamemaster->id;
         Redirect::to('/showgm/' . $gamemaster->id, array('message' => 'Gamemaster successfully updated!', 'gamemaster_logged_in' => $gamemaster_logged_in));
     }
 }

@@ -33,7 +33,7 @@ CREATE TABLE Weapon (
 
 CREATE TABLE Creature (
 	id SERIAL PRIMARY KEY,
-	owner_id int REFERENCES Gamemaster(id) NOT NULL,
+	owner_id int REFERENCES Gamemaster(id) ON DELETE CASCADE NOT NULL,
 	name varchar(50) REFERENCES Name(name) NOT NULL,
 	race varchar(50)REFERENCES Race(name) NOT NULL,
 	creatureClass varchar(50) REFERENCES CreatureClass(name) NOT NULL,
