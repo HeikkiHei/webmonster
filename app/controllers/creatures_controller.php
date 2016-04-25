@@ -4,11 +4,11 @@ class CreatureController extends BaseController{
 	
 	public static function listCreature() {
 		self::check_logged_in();
-		
+
 		$gamemaster_logged_in = self::get_gamemaster_logged_in();
 		$gamemaster_id = self::get_gamemaster_id();
 		$creatures = Creature::myCreatures($gamemaster_id);
-		View::make('creature/listcreature.html', array('creatures' => $creatures, 'gamemaster_logged_in' => $gamemaster_logged_in));
+		View::make('creature/listcreature.html', array('creatures' => $creatures, 'gamemaster_logged_in' => $gamemaster_logged_in, 'gamemaster_id' => $gamemaster_id));
 	}
 
 	public static function editCreature($id) {

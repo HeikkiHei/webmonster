@@ -5,8 +5,16 @@ class GmController extends BaseController{
 
   public static function listGM() {
     self::check_logged_in();
-    $gamemasters = Gamemaster::all();
-    View::make('gamemaster/listgm.html', array('gamemasters' => $gamemasters));
+    $gamemaster_logged_in = self::get_gamemaster_logged_in();
+    $gamemaster_id = self::get_gamemaster_id();
+    $moderator = Gamemaster::checkModerator($gamemaster_id);
+    if($moderator != null) {
+        $gamemasters = Gamemaster::all();
+        View::make('gamemaster/listgm.html', array('gamemasters' => $gamemasters, 'gamemaster_logged_in' => $gamemaster_logged_in));
+    } else {
+        $_SESSION['gamemaster'] = null;
+        Redirect::to('/', array('error' => 'You do not have the permission! Logged out!'));
+    }
 }
 
 public static function editGM($id) {
@@ -65,7 +73,7 @@ public static function updateGM($id) {
     }else {
         $gamemaster->update();
         $_SESSION['gamemaster'] = $gamemaster->id;
-        Redirect::to('/showgm/' . $gamemaster->id, array('message' => 'Gamemaster successfully updated!', 'gamemaster_logged_in' => $gamemaster_logged_in));
+        CreatureController::listCreature();
     }
 }
 

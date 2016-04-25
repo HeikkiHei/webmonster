@@ -8,11 +8,13 @@ Edit a Game Master
 <h1>Edit: {{gamemaster.name}}</h1>
 
 <form method="post" action="{{base_path}}/editgm/{{gamemaster.id}}">
+
 	<div class="form-group">
 		<input type="hidden" name="moderator" value=0>
 		<input type="checkbox" name="moderator">
 		<label>Moderator</label>
 	</div>
+
 	<div class="form-group">
 		<label>Name</label>
 		<input type="text" class="form-control" name="name" value="{{gamemaster.name}}">
@@ -28,7 +30,7 @@ Edit a Game Master
 		<button type="submit" class="btn btn-success">Save</button>
 	</div>
 </form>
-<form method="post" action="{{base_path}}/showgm/{{gamemaster.id}}/delete">
+<form method="post" action="{{base_path}}/showgm/{{gamemaster.id}}/delete" class="destroy-form" data-confirm="Are you sure?">
 	<div class="form-group">
 		<button type="submit" class="btn btn-danger">Delete</button>
 	</div>

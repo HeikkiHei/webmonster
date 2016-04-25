@@ -25,6 +25,19 @@ class Gamemaster extends BaseModel {
 		return null;
 	}
 
+	public static function checkModerator($id) {
+		$query = DB::connection()->prepare("SELECT * FROM gamemaster WHERE moderator='t' AND id = :id LIMIT 1");
+		$query->execute(array('id'=>$id));
+		$row = $query->fetch();
+		if($row) {
+			$moderator = new Gamemaster(array(
+				'moderator' => $row['moderator']
+				));
+			return $moderator;
+		}
+		return null;
+	}
+
 	public static function all(){
 		$query = DB::connection()->prepare('SELECT * FROM gamemaster');
 		
@@ -61,10 +74,6 @@ class Gamemaster extends BaseModel {
 		return null;
 	}
 
-	
-
-
-
 	public function update() {
 		$query = DB::connection()->prepare('UPDATE gamemaster SET (name, password, moderator) =
 			(:name, :password, :moderator) WHERE id = :id');
@@ -86,6 +95,7 @@ class Gamemaster extends BaseModel {
 		$row = $query->fetch();
 		$this->id = $row['id'];
 	}
+
 	public function destroy($id) {
 		$query = DB::connection()->prepare('DELETE FROM gamemaster
 			WHERE gamemaster.id = :id');

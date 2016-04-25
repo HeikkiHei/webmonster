@@ -14,7 +14,7 @@ Examine a creature
  <a href="{{base_path}}/editcreature/{{creature.id}}" class="btn btn-success">Edit</a>
 </div>
 <div>
- <form method="post" action="{{base_path}}/showcreature/{{creature.id}}">
+ <form method="post" action="{{base_path}}/showcreature/{{creature.id}}" class="destroy-form" data-confirm="Are you sure?">
   <button type="submit" class="btn btn-danger">Delete</a>
   </form>
 </div>

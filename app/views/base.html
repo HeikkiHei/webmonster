@@ -44,6 +44,7 @@
 
           {% if gamemaster_logged_in %}
           <form class="navbar-form navbar-right" method="post" action="{{base_path}}/logout">
+          <a href="{{base_path}}/editgm/{{gamemaster_id}}" class="btn btn-success">Edit your information</a>
           <button type="submit" class="btn btn-success">Log out</button>
           </form>
           {% else %}
