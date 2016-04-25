@@ -37,7 +37,9 @@ Examine a creature
   <p>{{creature.creatureClass}}</p>
 
   <h3>Inventory</h3>
-  <p>Placeholder</p>
+  {% for item in inventory%}
+  {{item}}
+  {% endfor %}
 </div>
 
 <div><div style="float: right;">

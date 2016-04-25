@@ -10,7 +10,7 @@ class GmController extends BaseController{
     $moderator = Gamemaster::checkModerator($gamemaster_id);
     if($moderator != null) {
         $gamemasters = Gamemaster::all();
-        View::make('gamemaster/listgm.html', array('gamemasters' => $gamemasters, 'gamemaster_logged_in' => $gamemaster_logged_in));
+        View::make('gamemaster/listgm.html', array('gamemasters' => $gamemasters, 'gamemaster_logged_in' => $gamemaster_logged_in, 'moderator' => $moderator));
     } else {
         $_SESSION['gamemaster'] = null;
         Redirect::to('/', array('error' => 'You do not have the permission! Logged out!'));
@@ -20,8 +20,10 @@ class GmController extends BaseController{
 public static function editGM($id) {
     self::check_logged_in();
     $gamemaster_logged_in = self::get_gamemaster_logged_in();
+    $gamemaster_id = self::get_gamemaster_id();
+    $moderator = Gamemaster::checkModerator($gamemaster_id);
     $gamemaster = Gamemaster::find($id);
-    View::make('gamemaster/editgm.html', array('gamemaster' => $gamemaster, 'gamemaster_logged_in' => $gamemaster_logged_in));
+    View::make('gamemaster/editgm.html', array('gamemaster' => $gamemaster, 'gamemaster_logged_in' => $gamemaster_logged_in, 'moderator' => $moderator));
 }
 
 public static function generateGM() {
