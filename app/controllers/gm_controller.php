@@ -4,11 +4,13 @@ class GmController extends BaseController{
 	
 
   public static function listGM() {
+    self::check_logged_in();
     $gamemasters = Gamemaster::all();
     View::make('gamemaster/listgm.html', array('gamemasters' => $gamemasters));
 }
 
 public static function editGM($id) {
+    self::check_logged_in();
     $gamemaster_logged_in = self::get_gamemaster_logged_in();
     $gamemaster = Gamemaster::find($id);
     View::make('gamemaster/editgm.html', array('gamemaster' => $gamemaster, 'gamemaster_logged_in' => $gamemaster_logged_in));
@@ -19,6 +21,7 @@ public static function generateGM() {
 }
 
 public static function showGM($id) {
+    self::check_logged_in();
     $gamemaster = Gamemaster::find($id);
     View::make('gamemaster/showgm.html', array('gamemaster' => $gamemaster));
 }
@@ -43,6 +46,7 @@ public static function saveGM() {
 }
 
 public static function updateGM($id) {
+    self::check_logged_in();
     $gamemaster_logged_in = self::get_gamemaster_logged_in();
     $params = $_POST;
     $attributes = array('id'=> $id,
@@ -66,6 +70,7 @@ public static function updateGM($id) {
 }
 
 public static function destroy($id) {
+    self::check_logged_in();
     $gamemaster = new Gamemaster(array('id' => $id));
     $gamemaster->destroy($id);
     Redirect::to('/', array('message' => 'Gamemaster successfully deleted!'));
@@ -91,6 +96,11 @@ public static function handle_login() {
         $_SESSION['gamemaster'] = $gamemaster->id;
         CreatureController::listCreature();
     }
+}
+
+public static function handle_logout() {
+    $_SESSION['gamemaster'] = null;
+    Redirect::to('/', array('message' => 'You have logged out!'));
 }
 
 }

@@ -19,6 +19,10 @@ $routes->post('/login', function() {
 	GmController::handle_login();
 });
 
+$routes->post('/logout', function() {
+	GmController::handle_logout();
+});
+
 
 //Creatures get
 

@@ -3,6 +3,8 @@
 class CreatureController extends BaseController{
 	
 	public static function listCreature() {
+		self::check_logged_in();
+		
 		$gamemaster_logged_in = self::get_gamemaster_logged_in();
 		$gamemaster_id = self::get_gamemaster_id();
 		$creatures = Creature::myCreatures($gamemaster_id);
@@ -10,6 +12,8 @@ class CreatureController extends BaseController{
 	}
 
 	public static function editCreature($id) {
+		self::check_logged_in();
+
 		$gamemaster_logged_in = self::get_gamemaster_logged_in();
 		$creature = Creature::find($id);
 		$names = Name::getNames();
@@ -19,6 +23,7 @@ class CreatureController extends BaseController{
 	}
 
 	public static function updateCreature($id) {
+		self::check_logged_in();
 		$gamemaster_logged_in = self::get_gamemaster_logged_in();
 		$params = $_POST;
 		$attributes = array('id'=> $id,
@@ -43,12 +48,14 @@ class CreatureController extends BaseController{
 	}
 
 	public static function showCreature($id) {
+		self::check_logged_in();
 		$gamemaster_logged_in = self::get_gamemaster_logged_in();
 		$creature = Creature::find($id);
 		View::make('creature/showcreature.html', array('creature' => $creature, 'gamemaster_logged_in' => $gamemaster_logged_in));
 	}
 
 	public static function generateCreature() {
+		self::check_logged_in();
 		$gamemaster_logged_in = self::get_gamemaster_logged_in();
 		$name = Name::getName();
 		$race = Race::getRace();
@@ -57,6 +64,7 @@ class CreatureController extends BaseController{
 	}
 
 	public static function saveCreature() {
+		self::check_logged_in();
 		$gamemaster_logged_in = self::get_gamemaster_logged_in();
 		$params = $_POST;
 		$creature = new Creature(array(
@@ -80,6 +88,7 @@ class CreatureController extends BaseController{
 	}
 
 	public static function destroy($id) {
+		self::check_logged_in();
 		$gamemaster_logged_in = self::get_gamemaster_logged_in();
 		$creature = new Creature(array('id' => $id));
 		$creature->destroy($id);

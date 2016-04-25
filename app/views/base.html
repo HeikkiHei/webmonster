@@ -41,8 +41,18 @@
         <ul class="nav navbar-nav">
           <!-- Navigaation linkit -->
 
-          <li><a href="{{base_path}}">Login</a></li>
-          <li><a href="{{base_path}}/generategm">Register</a></li>
+
+          {% if gamemaster_logged_in %}
+          <form class="navbar-form navbar-right" method="post" action="{{base_path}}/logout">
+          <button type="submit" class="btn btn-success">Log out</button>
+          </form>
+          {% else %}
+
+          <form class="navbar-form navbar-right" method="link">
+            <a href="{{base_path}}" class="btn btn-success">Login</a>
+            <a href="{{base_path}}/generategm" class="btn btn-success">Register</a>
+          </form>
+          {% endif %}
         </ul>
       </div>
     </div>
