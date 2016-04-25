@@ -19,7 +19,9 @@ class CreatureController extends BaseController{
 		$names = Name::getNames();
 		$races = Race::getRaces();
 		$creatureclasses = CreatureClass::getCreatureClasses();
-		View::make('creature/editcreature.html', array('creature' => $creature, 'names' => $names, 'races' => $races, 'creatureclasses' => $creatureclasses, 'gamemaster_logged_in' => $gamemaster_logged_in));
+		$weapons = Weapon::getWeapons();
+		$inventories = Inventory::getCreaturesInventories($id);
+		View::make('creature/editcreature.html', array('creature' => $creature, 'names' => $names, 'races' => $races, 'creatureclasses' => $creatureclasses, 'gamemaster_logged_in' => $gamemaster_logged_in, 'weapons' => $weapons, 'inventories' => $inventories));
 	}
 
 	public static function updateCreature($id) {
@@ -51,8 +53,8 @@ class CreatureController extends BaseController{
 		self::check_logged_in();
 		$gamemaster_logged_in = self::get_gamemaster_logged_in();
 		$creature = Creature::find($id);
-		$inventory = Inventory::getCreaturesInventories($id)
-		View::make('creature/showcreature.html', array('creature' => $creature, 'gamemaster_logged_in' => $gamemaster_logged_in, 'inventory' => $inventory));
+		$inventories = Inventory::getCreaturesInventories($id);
+		View::make('creature/showcreature.html', array('creature' => $creature, 'gamemaster_logged_in' => $gamemaster_logged_in, 'inventories' => $inventories));
 	}
 
 	public static function generateCreature() {
@@ -99,11 +101,13 @@ class CreatureController extends BaseController{
 
 	public static function debug(){
 		$onecreature = Creature::find(1);
-		$creatures = Creature::all();
 		$name = Name::getName();
-		Kint::dump($creatures);
+		$inventory = Inventory::getCreaturesInventories(1);
+		$inventories = Inventory::getInventories();
 		Kint::dump($onecreature);
 		Kint::dump($name);
+		Kint::dump($inventory);
+		Kint::dump($inventories);
 	}
 
 

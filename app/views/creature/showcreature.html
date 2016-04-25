@@ -36,10 +36,13 @@ Examine a creature
   <h3>Class</h3>
   <p>{{creature.creatureClass}}</p>
 
+  {% if inventories%}
   <h3>Inventory</h3>
-  {% for item in inventory%}
-  {{item}}
+  {% for item in inventories%}
+  <p>{{item.name}} : {{item.description}}</p>
+  <p>{{item.minDamage}} : {{item.maxDamage}}</p>
   {% endfor %}
+  {% endif %}
 </div>
 
 <div><div style="float: right;">
