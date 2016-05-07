@@ -1,0 +1,102 @@
+Abola,Finesse ,1,8
+Amputation Knife,Light &  Finesse,1,6
+Anchor,Heavy &  two-handed & oversized &  special,2,12
+Arming Sword,Light &  Finesse &  Versatile (1d8),1,6
+Atlatl,Ammunition &  Range(50-100) &  Special,1,6
+Balisong,Finesse &  Light,1,4
+Bayonet,Light &  Special,1,4
+Bec de Corbin,Heavy &  reach &  two-handed,2,8
+Bladed Gauntlets,Heavy,1,6
+Boar Spear,Heavy &  two-handed,2,12
+Bolas,Special &  thrown (range 20/60),1,4
+Bonesaw,Finesse,1,8
+Boomerang,Light & Returning &  thrown (range 30/120),1,4
+Brandistock,Special &  two-handed,1,8
+Brass Knuckle,Light & hidden,1,4
+Broad Claw,Finesse &  light,1,4
+Broadsword,A broad sword,2,8
+Broken Sword,Finesse &  light,1,4
+Buster Sword,Oversized &  Two-Handed,3,18
+Buzzsaw,Heavy &  Two-handed &  Special,3,18
+Chain-Dagger,Disarming &  finesse &  reach  &  two-handed,1,6
+Chakram,Finesse &  thrown (range 20/60),1,8
+Crescent Cleaver,Special,1,8
+Cutlass,Short & broad sabre,1,8
+Dart,Finesse & undersized &  thrown (range 30/60),1,3
+Double Axe,Heavy &  two-handed &  double weapon,1,8
+Double Flail,Two-handed,1,8
+Double Spear,Thrown (20/60) &  versatile (1d8),1,6
+Double Sword,Versatile (1d8) &  light &  double weapon,1,6
+Dueling Shield,Heavy &  special &  two-handed,1,8
+Dwarven Urgrosh,Two-handed,1,10
+Elven Lightblade,Finesse &  Light &  Special,1,6
+Elven Thinblade,Finesse &  Special,1,8
+Epee,Special &  Finesse,1,2
+Falchion,One-handed & single-edged sword,1,8
+Fauchard,Heavy &  reach &  two-handed,1,6
+Flanged Mace,Versatile (1d10),1,8
+Flindbar,Entangle,2,8
+Gavel,Undersized,1,4
+Giant Axe,Oversized &  two-handed,4,16
+Godentag,Heavy &  Two-handed,1,8
+Great Maul,Oversized &  two-handed,3,18
+Greatbow,Heavy &  Ammunition (range 200/800) &  Two-handed,1,10
+Greatspear,Oversized(1d10) &  thrown (range 20/60) &  two-handed,1,8
+Guandao,Heavy &  Reach &  Two-handed,1,12
+Guisarme,Heavy &  reach &  two-handed,2,8
+Heavy Flail,Heavy &  two-handed,1,12
+Hextech Pistol,Light &  Ammunition (range 20/60) &  loading,2,8
+Hextech Rifle,Range (30/150) &  Ammunition,2,16
+Hidden Blade,Hidden &  Light &  Finesse &  Special,1,4
+Highland Claymore,Two-handed,1,12
+Iron Claw,Finesse & Hidden & Undersized,1,3
+Karambit,Finesse &  light,1,4
+Katana,Finesse &  Versatile (1d10),1,8
+Katar,Finesse &  light,1,6
+Knife,Finesse & Undersized & Hidden,1,3
+Knuckle Axe,Finesse &  light,1,4
+Kukri,Light &  thrown (range 20/60),1,6
+Kulshrada,Heavy &  Two-Handed,2,20
+Kusarigama,Two-handed &  Special,1,4
+Leather Gauntlets,Two-Handed &  Finesse &  Special,1,2
+Long Blade,Heavy &  reach &  two-handed,2,8
+Long Cane,Reach &  two-handed,1,8
+Longspear,Heavy &  reach &  versatile (1d8),1,6
+Longstaff,Heavy &  reach &  special &  two-handed,1,8
+Man Catcher,Two-handed &  reach &  special,1,4
+Mechanized Gauntlets,Two-Handed &  Heavy &  Special,1,10
+Meteor Hammer,Two-handed &  Special,1,6
+Miaodao,Finesse &  Versatile (2d6),1,10
+'Monk''s Glaive',Versatile (1d8 piercing),1,6
+'Monk''s Spade',Reach &  Versatile (1d8),1,6
+Needle,Finesse & undersized &  ranged 20/60,1,4
+Parrying Dagger,Finesse &  light &  special,1,4
+Pata,Light &  Finesse &  Special,1,6
+Plague Lancet,Finesse &  Thrown (20 &  60),1,4
+Pole Mace,Heavy &  Reach &  Two-handed,2,12
+Pollaxe,Heavy &  reach &  two-handed,2,8
+'Reaper''s Scythe',Versatile,1,10
+Repeating Crossbow,Ammunition (range 80/320) &  heavy &  reload (10 shots) &  two-handed,2,8
+Saber,Light &  Finesse,1,8
+Sap,Finesse &  light & Hidden & Undersized,1,4
+Scissor Sword,Light &  Heavy,1,6
+Scythe,Heavy &  two-handed,2,8
+Shamshir,Finesse &  Versatile (1d10) &  Special (This weapon loses the Finesse quality when wielded with two hands),1,8
+Shotel,Finesse &  Special,1,8
+Slingstaff,Ammunition (range 30/120) &  two-handed,1,6
+Spade,Versatile,1,4
+Steel Gauntlets,Two-Handed &  Special,1,4
+Stiletto Knife,Finesse & hidden &  light &  thrown (20/60) & undersized,1,4
+Sword Breaker,Light &  Special,1,4
+Talwar,Finesse,1,8
+Threaded Cane,Finesse &  Light &  Reach,1,6
+Throwing Glaive,Finesse &  light & returning &  thrown (range 30/60),1,6
+Throwing Hammer,Thrown (60/120),1,6
+Tiger Hook Sword,light &  finesse &  special,1,6
+Torch Mace,Special,1,4
+Torch Staff,Heavy &  special &  two-handed,2,8
+'Townshend''s Crudgel',Versatile (1d8),1,6
+Two-Handed Morningstar,Heavy &  two-handed,1,12
+War Saw,Two-Handed &  Heavy &  Loading &  Special,2,16
+Winged Punching Blade,Finesse,1,6
+Voulge,Heavy &  Two-handed,1,10
