@@ -8,27 +8,34 @@ Edit a Game Master
 <h1>Edit: {{gamemaster.name}}</h1>
 
 <form method="post" action="{{base_path}}/editgm/{{gamemaster.id}}">
-
-		<div class="form-group">
- 		<input type="hidden" name="moderator" value=0>
-  		<input type="checkbox" name="moderator">
-  		<label>Moderator</label>
-  	</div>
-
+	
+	<input type="hidden" name="moderator" value=0>
+	{% if moderator %}
 	<div class="form-group">
-		<label>Name</label>
-		<input type="text" class="form-control" name="name" value="{{gamemaster.name}}">
-	</div>
-	<div class="form-group">
-		<label>Password</label>
-		<input type="text" class="form-control" name="password" value="{{gamemaster.password}}">
-	</div>
+		<select class="c-select" name="moderator">
+			<option selected value={{gamemaster.moderator}}></option>
+			<option value=0 >No</option>
+			<option value=1 >Yes</option>
+		</select>
+	</select>
+	<label>Moderator</label>
+</div>
+{%endif %}
 
-	<br>
+<div class="form-group">
+	<label>Name</label>
+	<input type="text" class="form-control" name="name" value="{{gamemaster.name}}">
+</div>
+<div class="form-group">
+	<label>Password</label>
+	<input type="password" class="form-control" name="password" value="{{gamemaster.password}}">
+</div>
 
-	<div class="form-group">
-		<button type="submit" class="btn btn-success">Save</button>
-	</div>
+<br>
+
+<div class="form-group">
+	<button type="submit" class="btn btn-success">Save</button>
+</div>
 </form>
 <form method="post" action="{{base_path}}/showgm/{{gamemaster.id}}/delete" class="destroy-form" data-confirm="Are you sure?">
 	<div class="form-group">

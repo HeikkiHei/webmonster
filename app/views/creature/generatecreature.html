@@ -16,10 +16,10 @@ Generate a creature
   <div class="form-group"><input type="hidden" name="owner_id" value="{{gamemaster_logged_in.id}}"></div>
   
   <div>
-    <label style="white-space: pre">Level                 (between 1 and 100):</label>
+    <label style="white-space: pre">Level                 (between 1 and 20):</label>
     <br>
     <select class="c-select" name="level"> <option selected hidden>1</option>
-      {% for i in 1..100 %}
+      {% for i in 1..20 %}
       <option> {{i}} </option>
       {% endfor %}
     </select>
@@ -28,10 +28,10 @@ Generate a creature
 
   <div>
     <br>
-    <label style="white-space: pre">Hit points          (between -50 and 100):</label>
+    <label style="white-space: pre">Hit points          (between -10 and 100):</label>
     <br>
-    <select class="c-select" name="hitpoints"> <option selected hidden>0</option>
-      {% for i in -50..100 %}
+    <select class="c-select" name="hitpoints"> <option selected hidden>10</option>
+      {% for i in -10..100 %}
       <option> {{i}} </option>
       {% endfor %}
     </select>
@@ -43,12 +43,12 @@ Generate a creature
   <div class="form-group"><input type="hidden" name="name" value="{{name.name}}"></div>
   <div class="form-group"><input type="hidden" name="race" value="{{race.name}}"></div>
   <div class="form-group"><input type="hidden" name="creatureclass" value="{{creatureclass.name}}"></div>
-  <div class="form-group"><input type="hidden" name="strength" value={{random(100)}}></div>
-  <div class="form-group"><input type="hidden" name="dexterity" value={{random(100)}}></div>
-  <div class="form-group"><input type="hidden" name="constitution" value={{random(100)}}></div>
-  <div class="form-group"><input type="hidden" name="intelligence" value={{random(100)}}></div>
-  <div class="form-group"><input type="hidden" name="wisdom" value={{random(100)}}></div>
-  <div class="form-group"><input type="hidden" name="charisma" value={{random(100)}}></div>
+  <div class="form-group"><input type="hidden" name="strength" value={{random(50)}}></div>
+  <div class="form-group"><input type="hidden" name="dexterity" value={{random(50)}}></div>
+  <div class="form-group"><input type="hidden" name="constitution" value={{random(50)}}></div>
+  <div class="form-group"><input type="hidden" name="intelligence" value={{random(50)}}></div>
+  <div class="form-group"><input type="hidden" name="wisdom" value={{random(50)}}></div>
+  <div class="form-group"><input type="hidden" name="charisma" value={{random(50)}}></div>
   
   <div class="form-group">
     <button type="submit" class="btn btn-success">Generate</a>

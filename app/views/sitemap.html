@@ -19,9 +19,11 @@
 				<a href="{{base_path}}/generatecreature" class="btn btn-success">Generate creature</a>
 				<a href="{{base_path}}/listcreature" class="btn btn-success">List Creatures</a>
 			</div>
+			{% if moderator%}
 			<div class="form-group">
 				<h3>Moderator login required</h3>
 				<a href="{{base_path}}/listgm" class="btn btn-success">List GM</a>
 			</div>
+			{% endif %}
 
 			{% endblock %}
