@@ -47,7 +47,7 @@ Edit a creature
     </select>
   </div>
 
-  {% if inventories%}
+  {% if inventories %}
   <div class="form-group">
     <label>Inventory</label>
     <br>
@@ -63,9 +63,9 @@ Edit a creature
     <div class="form-group">
       <label> MOCK WEAPONRY EDIT</label>
       <br>
-      <select class="c-select" name="weapon">
+      <select class="c-select" name="test">
         {% for weapon in weapons %}
-        <option> {{weapon.name}}</option>
+        <option> {{weapon.name}} : {{weapon.description}} : {{weapon.minDamage}} : {{weapon.maxDamage}}</option>
         {% endfor %}
       </select>
     </div>

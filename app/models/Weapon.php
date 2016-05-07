@@ -2,7 +2,7 @@
 
 	class Weapon extends BaseModel {
 
-		public $id, $name, $description;
+		public $id, $name, $description, $minDamage, $maxDamage;
 
 		public function __construct($attributes) {
 			parent::__construct($attributes);
