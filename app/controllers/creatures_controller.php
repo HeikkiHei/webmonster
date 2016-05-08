@@ -104,7 +104,6 @@ class CreatureController extends BaseController{
 		$onecreature = Creature::find(1);
 		$name = Name::getName();
 		$inventory = Inventory::getCreaturesInventories(1);
-		$inventories = Inventory::getInventories();
 		Kint::dump($onecreature);
 		Kint::dump($name);
 		Kint::dump($inventory);
