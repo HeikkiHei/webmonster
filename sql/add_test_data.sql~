@@ -1,6 +1,5 @@
 INSERT INTO Gamemaster (name, password, moderator) VALUES ('heikkihei', 'tsohasalasana', TRUE);
 INSERT INTO Gamemaster (name, password, moderator) VALUES ('kayttaja', 'salasana', FALSE);
-INSERT INTO Gamemaster (name, password, moderator) VALUES ('moderator', 'moderator', TRUE);
 
 \copy Name (name) FROM '/home/heikkiah/htdocs/webmonster/name.txt'
 \copy CreatureClass (name, description) FROM '/home/heikkiah/htdocs/webmonster/class.txt' WITH DELIMITER ','
