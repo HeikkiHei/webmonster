@@ -57,6 +57,13 @@ $routes->post('/showcreature/:id', function($id) {
 	CreatureController::destroy($id);
 });
 
+$routes->get('/editcreature/:id/inventory', function($id) {
+	ItemController::editInventory($id);
+});
+
+$routes->post('/editcreature/:id/inventory', function() {
+	ItemController::addWeapon();
+});
 
 
 // GameMasters

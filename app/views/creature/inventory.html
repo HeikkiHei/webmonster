@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}
+Creature's items
+{% endblock %}
+
+{% block content %}
+
+{% if gamemaster_logged_in %}
+<h1>Inventory of <a href="{{base_path}}/showcreature/{{creature.id}}">{{creature.name}}</a></h1>
+{% endif %}
+
+
+<form method="post" action="{{base_path}}/editcreature/{{creature.id}}/inventory">
+<div class="form-group">
+
+  {% if inventories%}
+  {% for item in inventories%}
+  <p>{{item.name}} : {{item.description}}</p>
+  <p>{{item.minDamage}} : {{item.maxDamage}}</p>
+  {% endfor %}
+  {% endif %}
+
+  <label> Add a weapon</label>
+  <br>
+  <select class="c-select" name="weapon_id">
+    {% for weapon in weapons %}
+    <option> {{weapon.id}} </option>
+
+    {% endfor %}
+  </select>
+</div>
+
+<div class="form-group"><input type="hidden" name="creature_id" value="{{creature.id}}"></div>
+
+<div class="form-group">
+  <button type="submit" class="btn btn-success">Save</a>
+  </div>
+
+</form>
+  {% endblock %}

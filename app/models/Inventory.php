@@ -75,4 +75,13 @@
 			$this->creature_id = $row['creature_id'];
 		}
 
+
+		public function putInInventory($weapon_id, $creature_id) {
+			$query = DB::connection()->prepare('INSERT INTO Inventory (weapon_id, creature_id) VALUES (:weapon_id, :creature_id)');
+			$query->execute(array(
+				'weapon_id' => $weapon_id, 
+				'creature_id' => $creature_id
+				));
+		}
+
 	}

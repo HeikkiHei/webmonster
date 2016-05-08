@@ -11,7 +11,7 @@ Examine a creature
 
 <div class="form-group">
 
- <a href="{{base_path}}/editcreature/{{creature.id}}" class="btn btn-success">Edit</a>
+ <a href="{{base_path}}/editcreature/{{creature.id}}" class="btn btn-success">Edit creature</a>
 </div>
 <div>
  <form method="post" action="{{base_path}}/showcreature/{{creature.id}}" class="destroy-form" data-confirm="Are you sure?">
@@ -21,6 +21,7 @@ Examine a creature
 <!-- Otsikot -->
 
 {% if message %}
+<br>
 <div class="alert alert-success">
   {{message}}
 </div>
@@ -36,13 +37,24 @@ Examine a creature
   <h3>Class</h3>
   <p>{{creature.creatureClass}}</p>
 
-  {% if inventories%}
+
   <h3>Inventory</h3>
-  {% for item in inventories%}
-  <p>{{item.name}} : {{item.description}}</p>
-  <p>{{item.minDamage}} : {{item.maxDamage}}</p>
-  {% endfor %}
-  {% endif %}
+  {% if inventories%}
+  <div class="form-group">
+    <select class="form-control" name="inventory">
+      {% for item in inventories%}
+
+      <option>{{item.name}} : {{item.description}} : {{item.minDamage}} : {{item.maxDamage}}</option>
+
+      {% endfor %}
+    </select>
+    {% endif %}
+    <br>
+  </div>
+  <div class="form-group">
+
+   <a href="{{base_path}}/editcreature/{{creature.id}}/inventory" class="btn btn-success">Edit inventory</a>
+ </div>
 </div>
 
 <div><div style="float: right;">
