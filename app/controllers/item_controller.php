@@ -23,14 +23,14 @@ class ItemController extends BaseController{
 		$weapon_id = $params['weapon_id'];
 
 		$creature = Creature::find($creature_id);
-		$inventories = Inventory::getCreaturesInventories($creature_id);
-
 
 		$inventory = new Inventory(array(
 			'weapon_id' => $weapon_id,
 			'creature_id' => $creature_id));
 
 		$inventory->putInInventory($weapon_id, $creature_id);
+
+		$inventories = Inventory::getCreaturesInventories($creature_id);
 
 		View::make('/creature/showcreature.html', array( 'creature' => $creature, 'message' => 'Weapon added!', 
 			'gamemaster_logged_in' => $gamemaster_logged_in, 'inventories' => $inventories));

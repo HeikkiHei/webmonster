@@ -12,21 +12,26 @@ Creature's items
 
 
 <form method="post" action="{{base_path}}/editcreature/{{creature.id}}/inventory">
-<div class="form-group">
+  <div class="form-group">
 
-  {% if inventories%}
-  {% for item in inventories%}
-  <p>{{item.name}} : {{item.description}}</p>
-  <p>{{item.minDamage}} : {{item.maxDamage}}</p>
-  {% endfor %}
-  {% endif %}
+   {% if inventories%}
+   <div class="form-group">
+    <select class="form-control" name="inventory">
+      {% for item in inventories%}
+
+      <option>{{item.name}} : {{item.description}} : {{item.minDamage}} : {{item.maxDamage}}</option>
+
+      {% endfor %}
+    </select>
+    {% endif %}
+    <br>
+  </div>
 
   <label> Add a weapon</label>
   <br>
   <select class="c-select" name="weapon_id">
     {% for weapon in weapons %}
-    <option> {{weapon.id}} </option>
-
+    <option value={{weapon.id}}> {{weapon.name}} : {{weapon.description}} : {{weapon.minDamage}} : {{weapon.maxDamage}} </option>
     {% endfor %}
   </select>
 </div>
@@ -38,4 +43,4 @@ Creature's items
   </div>
 
 </form>
-  {% endblock %}
+{% endblock %}
