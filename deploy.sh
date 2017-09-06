@@ -20,4 +20,4 @@ cd htdocs/$PROJECT_FOLDER
 php composer.phar dump-autoload
 exit"
 
-echo "Valmis! Sovelluksesi on nyt valmiina osoitteessa $USERNAME.users.cs.helsinki.fi/$PROJECT_FOLDER"
+echo "Valmis! Sovelluksesi on nyt valmiina osoitteessa $USERNAME.users2017.cs.helsinki.fi/$PROJECT_FOLDER"

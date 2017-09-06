@@ -4,4 +4,4 @@
 USERNAME="heikkiah"
 # korvaa tämä haluamallasi kansion nimellä
 PROJECT_FOLDER="webmonster"
-# sovelluksesi tulee sijaitsemaan osoitteessa USERNAME.users.cs.helsinki.fi/PROJECT_FOLDER
+# sovelluksesi tulee sijaitsemaan osoitteessa USERNAME.users2017.cs.helsinki.fi/PROJECT_FOLDER

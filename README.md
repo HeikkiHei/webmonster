@@ -2,9 +2,9 @@
 
 Yleisiä linkkejä:
 
-* [Linkki sovellukseeni](http://heikkiah.users.cs.helsinki.fi/webmonster/)
+* [Linkki sovellukseeni](http://heikkiah.users2017.cs.helsinki.fi/webmonster/)
 * [Linkki dokumentaatiooni](https://github.com/HeikkiHei/webmonster/blob/master/doc/dokumentaatio.pdf)
-* [Linkki työn sitemapiin](http://heikkiah.users.cs.helsinki.fi/webmonster/sitemap)
+* [Linkki työn sitemapiin](http://heikkiah.users2017.cs.helsinki.fi/webmonster/sitemap)
 
 ## Työn aihe
    
